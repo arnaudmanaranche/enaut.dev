@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-display: optional;
+  src: url(/fonts/bitter.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-display: optional;
+  src: url(/fonts/raleway.woff2) format('woff2');
+}
+
+.customMark::before {
+  background-color: #76ba99;
+  content: '';
+  width: 2rem;
+  height: 0.7rem;
+  left: -2px;
+  top: 8px;
+  z-index: -1;
+  transform: rotate(-2deg);
+  position: absolute;
+  bottom: 0;
+}
+
+.specialHr {
+  flex: 1 1 0%;
+  border-width: 0px 0px 2px;
+  border-top-style: initial;
+  border-right-style: initial;
+  border-left-style: initial;
+  border-image: initial;
+  border-bottom-style: dotted;
+  border-color: rgba(255, 255, 255, 0.13);
+}
+
+.customBg {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    75%,
+    rgba(0, 0, 0, 0)
+  );
+}
