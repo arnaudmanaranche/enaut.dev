@@ -14,7 +14,7 @@ const ChangelogPage = ({
       <PageTitle title="Changelog" subTitle="Releases notes" />
       <div className="flow-root mt-20">
         <div role="list" className="-mb-8">
-          {changelog.map(({ title, description, date }, index) => {
+          {changelog.map(({ title, description, date, url }, index) => {
             return (
               <div className="relative pb-8" key={title} role="listitem">
                 {index !== changelog.length - 1 ? (
@@ -43,7 +43,16 @@ const ChangelogPage = ({
                   <div className="min-w-0 flex-1">
                     <div>
                       <div className="text-lg">
-                        <h2 className="font-medium mt-0">{title}</h2>
+                        <h2 className="font-medium mt-0">
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="underline"
+                          >
+                            {title}
+                          </a>
+                        </h2>
                       </div>
                       <div className="mt-3 text-base">
                         {new Date(date).toLocaleDateString('en', {

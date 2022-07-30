@@ -32,6 +32,7 @@ export type ReleaseNote = Array<{
   title: string
   description: string
   date: string
+  url: string
 }>
 
 export const getChangelogData = async () => {
@@ -53,6 +54,7 @@ export const getChangelogData = async () => {
       title: item.properties.Name.title[0].plain_text,
       description: item.properties.Description.rich_text[0].plain_text,
       date: item.properties.Date.date.start,
+      url: item.url,
     })
   })
 
