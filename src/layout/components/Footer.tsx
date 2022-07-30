@@ -64,6 +64,7 @@ export const Footer = (): ReactElement => {
             href="https://vercel.com/dashboard"
             className="hover:underline"
             rel="noreferrer noopener"
+            target="_blank"
           >
             Vercel
           </a>
