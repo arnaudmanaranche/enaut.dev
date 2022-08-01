@@ -19,7 +19,7 @@
       "@/components": ["src/components"],
       "@/contexts/*": ["src/contexts/*"],
       "@/layout/*": ["src/layout/*"],
-      "@/lib": ["src/lib"],
+      "@/libs": ["src/libs"],
       "@/utils": ["src/utils"]
     }
   },

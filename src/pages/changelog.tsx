@@ -1,5 +1,5 @@
-import type { ReleaseNote } from '@/lib'
-import { getChangelogData } from '@/lib'
+import type { ReleaseNote } from '@/libs'
+import { getChangelogData } from '@/libs'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 import { PageTitle } from '@/components'

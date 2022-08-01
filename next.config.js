@@ -35,7 +35,7 @@ const nextConfig = {
   },
   webpack(config) {
     config.module.rules.push({
-      test: [/src\/(components|lib|utils)\/index.ts/i],
+      test: [/src\/(components|libs|utils)\/index.ts/i],
       sideEffects: false,
     })
 

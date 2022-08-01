@@ -2,7 +2,7 @@ import { copyTextToClipboard } from '@/utils'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 import { Button } from '@/components'
-import { getQuotesData } from '@/lib'
+import { getQuotesData } from '@/libs'
 
 const COPY_TO_CLIPBOARD = 'Copy to clipboard'
 const COPIED_TO_CLIPBOARD = 'Copied'

@@ -1,6 +1,6 @@
 import { PageTitle, Quote } from '@/components'
-import { getQuotesData } from '@/lib'
-import type { Quotes } from '@/lib'
+import { getQuotesData } from '@/libs'
+import type { Quotes } from '@/libs'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
