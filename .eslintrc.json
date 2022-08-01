@@ -1,5 +1,5 @@
 {
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
@@ -7,6 +7,13 @@
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "simple-import-sort/imports": [
+      2,
+      {
+        "groups": [["^@?\\w"], ["^(@)(/.*|$)"], ["^\\."], ["^.+\\.css$"]]
+      }
+    ],
+    "simple-import-sort/exports": 2
   }
 }

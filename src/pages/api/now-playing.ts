@@ -1,5 +1,6 @@
-import { getNowPlaying } from '@/lib/spotify'
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { getNowPlaying } from '@/libs'
 
 export interface NowPlayingType {
   artist: string

@@ -1,8 +1,9 @@
-import { PageTitle } from 'src/components/PageTitle'
-import { getQuotesData, Quotes } from '@/lib/notion'
-import { Quote } from 'src/components/Quote'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
+
+import { PageTitle, Quote } from '@/components'
+import type { Quotes } from '@/libs'
+import { getQuotesData } from '@/libs'
 
 const QuotesPages = ({ quotes }: { quotes: Quotes }): ReactElement => {
   return (

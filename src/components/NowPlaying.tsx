@@ -1,8 +1,10 @@
-import fetcher from '@/utils/fetcher'
-import { NowPlayingType } from 'src/pages/api/now-playing'
+import type { ReactElement } from 'react'
+import type { NowPlayingType } from 'src/pages/api/now-playing'
 import useSWR from 'swr'
 
-export default function NowPlaying() {
+import { fetcher } from '@/utils'
+
+export const NowPlaying = (): ReactElement => {
   const { data } = useSWR<NowPlayingType>('/api/now-playing', fetcher)
 
   return (

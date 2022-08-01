@@ -1,12 +1,11 @@
-import { ContactMe } from '@/components/ContactMe'
-import NowPlaying from '@/components/NowPlaying'
-import { getCurrentFullYear } from '@/utils/date'
-import { footerLinks, socialLinks } from '@/utils/links'
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ReactElement } from 'react'
+
+import { ContactMe, NowPlaying } from '@/components'
+import { footerLinks, getCurrentFullYear, socialLinks } from '@/utils'
 
 export const Footer = (): ReactElement => {
   const router = useRouter()
