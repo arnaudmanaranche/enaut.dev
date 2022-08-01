@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { headerLinks } from '@/utils/links'
+import { headerLinks } from '@/utils'
 import clsx from 'clsx'
 
 import type { ReactElement } from 'react'
-import { ContactMe } from '@/components/ContactMe'
+import { ContactMe } from '@/components'
 
 export const Header = (): ReactElement => {
   const router = useRouter()

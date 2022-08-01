@@ -1,5 +1,5 @@
 import { GlobalNavigationContext } from '@/contexts/AppContext'
-import { fixedNavMoreLinks, socialLinks } from '@/utils/links'
+import { fixedNavMoreLinks, socialLinks } from '@/utils'
 import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
 import Link from 'next/link'

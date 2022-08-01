@@ -1,8 +1,8 @@
-import { PageTitle } from 'src/components/PageTitle'
-import type { ReleaseNote } from '@/lib/notion'
-import { getChangelogData } from '@/lib/notion'
+import type { ReleaseNote } from '@/lib'
+import { getChangelogData } from '@/lib'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
+import { PageTitle } from '@/components'
 
 const ChangelogPage = ({
   changelog,

@@ -1,4 +1,4 @@
-import { siteMetadata } from '@/utils/siteMetaData'
+import { siteMetadata } from '@/utils'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import type { ReactElement } from 'react'

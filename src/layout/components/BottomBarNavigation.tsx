@@ -1,5 +1,5 @@
 import { GlobalNavigationContext } from '@/contexts/AppContext'
-import { fixedNavLinks } from '@/utils/links'
+import { fixedNavLinks } from '@/utils'
 import { PlusIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
 import Link from 'next/link'

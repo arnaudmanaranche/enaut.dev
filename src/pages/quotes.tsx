@@ -1,6 +1,6 @@
-import { PageTitle } from 'src/components/PageTitle'
-import { getQuotesData, Quotes } from '@/lib/notion'
-import { Quote } from 'src/components/Quote'
+import { PageTitle, Quote } from '@/components'
+import { getQuotesData } from '@/lib'
+import type { Quotes } from '@/lib'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 

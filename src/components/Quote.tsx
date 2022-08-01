@@ -1,8 +1,8 @@
-import { getQuotesData } from '@/lib/notion'
-import { copyTextToClipboard } from '@/utils/copyTextToClipboard'
+import { copyTextToClipboard } from '@/utils'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
-import { Button } from '@/components/Button'
+import { Button } from '@/components'
+import { getQuotesData } from '@/lib'
 
 const COPY_TO_CLIPBOARD = 'Copy to clipboard'
 const COPIED_TO_CLIPBOARD = 'Copied'

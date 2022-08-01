@@ -1,9 +1,11 @@
 import type { ReactElement, ReactNode } from 'react'
-import { BottomBarNavigation } from './components/BottomBarNavigation'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Metadata } from './components/Metadata'
-import { SideBar } from './components/SideBar'
+import {
+  BottomBarNavigation,
+  Footer,
+  Header,
+  Metadata,
+  SideBar,
+} from './components'
 
 export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
   return (
