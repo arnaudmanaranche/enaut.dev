@@ -1,8 +1,9 @@
-import { PageTitle, Quote } from '@/components'
-import { getQuotesData } from '@/libs'
-import type { Quotes } from '@/libs'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
+
+import { PageTitle, Quote } from '@/components'
+import type { Quotes } from '@/libs'
+import { getQuotesData } from '@/libs'
 
 const QuotesPages = ({ quotes }: { quotes: Quotes }): ReactElement => {
   return (

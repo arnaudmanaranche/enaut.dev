@@ -1,7 +1,8 @@
-import { fetcher } from '@/utils'
 import type { ReactElement } from 'react'
 import type { NowPlayingType } from 'src/pages/api/now-playing'
 import useSWR from 'swr'
+
+import { fetcher } from '@/utils'
 
 export const NowPlaying = (): ReactElement => {
   const { data } = useSWR<NowPlayingType>('/api/now-playing', fetcher)

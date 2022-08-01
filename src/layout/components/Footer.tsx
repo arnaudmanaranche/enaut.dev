@@ -1,10 +1,11 @@
-import { ContactMe, NowPlaying } from '@/components'
-import { footerLinks, socialLinks, getCurrentFullYear } from '@/utils'
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ReactElement } from 'react'
+
+import { ContactMe, NowPlaying } from '@/components'
+import { footerLinks, getCurrentFullYear, socialLinks } from '@/utils'
 
 export const Footer = (): ReactElement => {
   const router = useRouter()

@@ -1,4 +1,5 @@
 import type { ReactElement, ReactNode } from 'react'
+
 import {
   BottomBarNavigation,
   Footer,

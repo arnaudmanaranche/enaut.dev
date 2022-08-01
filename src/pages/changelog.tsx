@@ -1,8 +1,9 @@
-import type { ReleaseNote } from '@/libs'
-import { getChangelogData } from '@/libs'
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
+
 import { PageTitle } from '@/components'
+import type { ReleaseNote } from '@/libs'
+import { getChangelogData } from '@/libs'
 
 const ChangelogPage = ({
   changelog,

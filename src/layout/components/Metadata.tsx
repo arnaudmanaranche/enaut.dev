@@ -1,7 +1,8 @@
-import { siteMetadata } from '@/utils'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import type { ReactElement } from 'react'
+
+import { siteMetadata } from '@/utils'
 
 export const Metadata = (): ReactElement => {
   const router = useRouter()
