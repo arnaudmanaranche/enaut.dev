@@ -33,14 +33,6 @@ const nextConfig = {
       },
     ]
   },
-  webpack(config) {
-    config.module.rules.push({
-      test: [/src\/(components|libs|utils)\/index.ts/i],
-      sideEffects: false,
-    })
-
-    return config
-  },
 }
 
 module.exports = nextConfig
