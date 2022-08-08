@@ -31,6 +31,11 @@ const nextConfig = {
         permanent: true,
         basePath: false,
       },
+      {
+        source: '/twil',
+        destination: '/this-week-i-learned',
+        permanent: true,
+      },
     ]
   },
 }
