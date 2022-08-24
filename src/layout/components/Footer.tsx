@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@heroicons/react/solid'
+import { LinkIcon } from '@heroicons/react/24/solid'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -22,7 +22,7 @@ export const Footer = (): ReactElement => {
                 rel="noreferrer noopener"
               >
                 {label}
-                <ExternalLinkIcon
+                <LinkIcon
                   className="ml-1 text-opacity-40 text-black"
                   color="#212121"
                   width={16}
