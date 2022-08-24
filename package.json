@@ -14,7 +14,7 @@
     "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.1",
+    "@heroicons/react": "2.0.4",
     "@notionhq/client": "1.0.4",
     "clsx": "1.2.1",
     "next": "12.2.5",
