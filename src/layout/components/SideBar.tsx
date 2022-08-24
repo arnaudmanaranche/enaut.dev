@@ -1,4 +1,4 @@
-import { ExternalLinkIcon, XIcon } from '@heroicons/react/outline'
+import { LinkIcon, XCircleIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -26,7 +26,7 @@ export const SideBar = () => {
             <h2 className="text-primary transform-gpu text-sm font-bold line-clamp-1">
               Navigation
             </h2>
-            <XIcon
+            <XCircleIcon
               width={16}
               height={16}
               onClick={() => {
@@ -72,7 +72,7 @@ export const SideBar = () => {
                   rel="noreferrer noopener"
                 >
                   {label}
-                  <ExternalLinkIcon
+                  <LinkIcon
                     className="ml-1 text-opacity-40 text-black"
                     color="#212121"
                     width={16}
