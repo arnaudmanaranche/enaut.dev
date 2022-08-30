@@ -34,7 +34,7 @@ export const footerLinks = [
   },
   {
     label: 'TWIL',
-    path: null,
+    path: '/this-week-i-learned',
   },
   {
     label: 'Activities',
@@ -116,7 +116,7 @@ export const fixedNavMoreLinks = [
   },
   {
     label: 'TWIL',
-    path: null,
+    path: '/this-week-i-learned',
     icon: () => {
       return (
         <AcademicCapIcon
