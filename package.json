@@ -3,14 +3,14 @@
   "private": true,
   "sideEffects": "false",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "check-types": "tsc --pretty --noEmit",
+    "dev": "next dev",
     "format": "prettier --write .",
+    "lint": "next lint",
+    "start": "next start",
     "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
   },
   "dependencies": {
@@ -29,7 +29,7 @@
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@types/react-syntax-highlighter": "15.5.5",
-    "@typescript-eslint/eslint-plugin": "5.35.1",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
     "autoprefixer": "10.4.8",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
