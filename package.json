@@ -14,7 +14,7 @@
     "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.8",
+    "@heroicons/react": "2.0.10",
     "@notionhq/client": "1.0.4",
     "clsx": "1.2.1",
     "next": "12.2.5",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "0.5.4",
     "@types/node": "18.0.6",
-    "@types/react": "18.0.17",
+    "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@types/react-syntax-highlighter": "15.5.5",
     "@typescript-eslint/eslint-plugin": "5.35.1",
