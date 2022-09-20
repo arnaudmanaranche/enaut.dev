@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
 import { PageWrapper } from '@/components'
