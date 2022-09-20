@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
-import { PageTitle } from '@/components'
+import { PageWrapper } from '@/components'
 import type { ReleaseNote } from '@/libs'
 import { getChangelogData } from '@/libs'
 
@@ -11,8 +11,7 @@ const ChangelogPage = ({
   changelog: ReleaseNote
 }): ReactElement => {
   return (
-    <div>
-      <PageTitle title="Changelog" subTitle="Releases notes" />
+    <PageWrapper title="Changelog" subTitle="Releases notes">
       <div className="flow-root mt-20">
         <div role="list" className="-mb-8">
           {changelog.map(({ title, description, date, url }, index) => {
@@ -73,7 +72,7 @@ const ChangelogPage = ({
           })}
         </div>
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 

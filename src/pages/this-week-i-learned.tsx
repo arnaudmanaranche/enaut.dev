@@ -2,13 +2,12 @@ import { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
-import { PageTitle } from '@/components'
+import { PageWrapper } from '@/components'
 import { getTwilData, TwilWeek } from '@/libs'
 
 const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
   return (
-    <div>
-      <PageTitle title="This Week I Learned" subTitle="Doings and learnings" />
+    <PageWrapper title="This Week I Learned" subTitle="Doings and learnings">
       <div className="mt-20 prose">
         {weeks.map((week) => (
           <section key={week.number}>
@@ -37,7 +36,7 @@ const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
           </section>
         ))}
       </div>
-    </div>
+    </PageWrapper>
   )
 }
 
