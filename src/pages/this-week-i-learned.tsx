@@ -1,9 +1,10 @@
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
 import { PageWrapper } from '@/components'
-import { getTwilData, TwilWeek } from '@/libs'
+import type { TwilWeek } from '@/libs'
+import { getTwilData } from '@/libs'
 
 const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
   return (
