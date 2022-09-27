@@ -10,15 +10,17 @@ import {
 
 export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
   return (
-    <div className="mx-auto max-w-[766px] font-body relative">
+    <div className="font-body relative">
       <Metadata />
       <Header />
-      <main className="my-10 min-h-screen px-6 md:px-0">
-        <SideBar />
-        {children}
-      </main>
-      <Footer />
-      <BottomBarNavigation />
+      <div className="mx-auto max-w-[766px]">
+        <main className="my-10 min-h-screen px-6 md:px-0">
+          <SideBar />
+          {children}
+        </main>
+        <Footer />
+        <BottomBarNavigation />
+      </div>
     </div>
   )
 }
