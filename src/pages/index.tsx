@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     <div className="text-lg leading-8">
       <h1 className="text-6xl font-bold">Hello.</h1>
       <br />
-      <p>I&apos;m Arnaud. I&apos;m a french frontend developer.</p>
+      <p>I&apos;m Arnaud. I&apos;m a french frontend engineer.</p>
       <br />
       <p>
         Right now I&apos;m working at&nbsp;
