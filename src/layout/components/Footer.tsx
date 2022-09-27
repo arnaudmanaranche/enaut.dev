@@ -36,7 +36,7 @@ export const Footer = (): ReactElement => {
           {footerLinks.map(({ path, label }) => {
             const isLinkActive = router.pathname === path
             return (
-              <Link href={path ?? '#!'} key={label}>
+              <Link href={path ?? '#!'} key={label} scroll={false}>
                 <a
                   tabIndex={path ? 0 : -1}
                   className={clsx(
