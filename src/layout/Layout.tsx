@@ -10,7 +10,7 @@ import {
 
 export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
   return (
-    <div className="font-body relative">
+    <div className="font-sans relative">
       <Metadata />
       <Header />
       <div className="mx-auto max-w-[766px]">

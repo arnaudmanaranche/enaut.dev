@@ -1,11 +1,12 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
       fontFamily: {
-        display: ['Bitter'],
-        body: ['Raleway'],
+        sans: ['Raleway', ...fontFamily.sans],
       },
       colors: {
         primary: '#047857',
