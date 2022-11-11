@@ -21,23 +21,3 @@
   position: absolute;
   bottom: 0;
 }
-
-.specialHr {
-  flex: 1 1 0%;
-  border-width: 0px 0px 2px;
-  border-top-style: initial;
-  border-right-style: initial;
-  border-left-style: initial;
-  border-image: initial;
-  border-bottom-style: dotted;
-  border-color: rgba(255, 255, 255, 0.13);
-}
-
-.customBg {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9),
-    75%,
-    rgba(0, 0, 0, 0)
-  );
-}

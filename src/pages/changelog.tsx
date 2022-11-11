@@ -48,7 +48,7 @@ const ChangelogPage = ({
                             href={url}
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="underline"
+                            className="bg-gradient-to-r from-black to-black bg-bottom	bg-[length:100%_1px] bg-no-repeat"
                           >
                             {title}
                           </a>

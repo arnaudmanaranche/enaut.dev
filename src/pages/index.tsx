@@ -13,7 +13,7 @@ const Home: NextPage = () => (
       Right now I&apos;m working at&nbsp;
       <Link
         href="https://ornikar.com/"
-        className="text-[#4c34e0] hover:underline"
+        className="text-[#4c34e0] hover:bg-gradient-to-r from-[#4c34e0] to-[#4c34e0] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -24,7 +24,7 @@ const Home: NextPage = () => (
       <Link
         href="https://www.origins-digital.com/"
         target="_blank"
-        className="text-[#ff680a] hover:underline"
+        className="text-[#ff680a] hover:bg-gradient-to-r from-[#ff680a] to-[#ff680a] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
         rel="noreferrer noopener"
       >
         Origins Digital
