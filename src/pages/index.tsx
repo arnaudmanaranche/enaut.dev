@@ -11,25 +11,23 @@ const Home: NextPage = () => (
     </p>
     <p>
       Right now I&apos;m working at&nbsp;
-      <Link href="https://ornikar.com/">
-        <a
-          className="text-[#4c34e0] hover:bg-gradient-to-r from-[#4c34e0] to-[#4c34e0] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Ornikar
-        </a>
+      <Link
+        href="https://ornikar.com/"
+        className="text-[#4c34e0] hover:bg-gradient-to-r from-[#4c34e0] to-[#4c34e0] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Ornikar
       </Link>
       &nbsp;designing & building the future of the car insurance. Before that I
       worked at{' '}
-      <Link href="https://www.origins-digital.com/">
-        <a
-          target="_blank"
-          className="text-[#ff680a] hover:bg-gradient-to-r from-[#ff680a] to-[#ff680a] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
-          rel="noreferrer noopener"
-        >
-          Origins Digital
-        </a>
+      <Link
+        href="https://www.origins-digital.com/"
+        target="_blank"
+        className="text-[#ff680a] hover:bg-gradient-to-r from-[#ff680a] to-[#ff680a] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
+        rel="noreferrer noopener"
+      >
+        Origins Digital
       </Link>
       , a sports digital agency.
     </p>

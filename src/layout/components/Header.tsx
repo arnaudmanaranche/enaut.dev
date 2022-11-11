@@ -49,18 +49,18 @@ export const Header = (): ReactElement => {
             const isLinkActive = router.pathname === path
             return (
               <span key={label}>
-                <Link href={path ?? '#!'} scroll={false}>
-                  <a
-                    tabIndex={path ? 0 : -1}
-                    className={clsx(
-                      isLinkActive && 'text-primary',
-                      !isLinkActive && path && 'hover:bg-gray-100',
-                      !path && 'cursor-not-allowed text-gray-500',
-                      ' p-1 sm:px-3 sm:py-2 rounded-lg transition-all'
-                    )}
-                  >
-                    {label}
-                  </a>
+                <Link
+                  href={path ?? '#!'}
+                  scroll={false}
+                  tabIndex={path ? 0 : -1}
+                  className={clsx(
+                    isLinkActive && 'text-primary',
+                    !isLinkActive && path && 'hover:bg-gray-100',
+                    !path && 'cursor-not-allowed text-gray-500',
+                    ' p-1 sm:px-3 sm:py-2 rounded-lg transition-all'
+                  )}
+                >
+                  {label}
                 </Link>
               </span>
             )

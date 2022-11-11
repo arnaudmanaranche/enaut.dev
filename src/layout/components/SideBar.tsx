@@ -39,23 +39,24 @@ export const SideBar = () => {
               const isLinkActive = router.pathname === path
 
               return (
-                <Link href={path ?? '#!'} key={label} scroll={false}>
-                  <a
-                    onClick={() => {
-                      path ? setIsOpen(false) : null
-                    }}
-                    tabIndex={path ? 0 : -1}
-                    className={clsx(
-                      isLinkActive && 'bg-[#047857] text-white',
-                      !path && 'cursor-not-allowed text-gray-500',
-                      'flex items-center justify-between text-gray-700  rounded-md px-2 py-1.5'
-                    )}
-                  >
-                    {label}
-                    <span className={clsx(isLinkActive && 'text-white')}>
-                      {icon()}
-                    </span>
-                  </a>
+                <Link
+                  href={path ?? '#!'}
+                  key={label}
+                  scroll={false}
+                  onClick={() => {
+                    path ? setIsOpen(false) : null
+                  }}
+                  tabIndex={path ? 0 : -1}
+                  className={clsx(
+                    isLinkActive && 'bg-[#047857] text-white',
+                    !path && 'cursor-not-allowed text-gray-500',
+                    'flex items-center justify-between text-gray-700  rounded-md px-2 py-1.5'
+                  )}
+                >
+                  {label}
+                  <span className={clsx(isLinkActive && 'text-white')}>
+                    {icon()}
+                  </span>
                 </Link>
               )
             })}
@@ -65,20 +66,20 @@ export const SideBar = () => {
               Online
             </h3>
             {socialLinks.map(({ path, label }) => (
-              <Link key={label} href={path}>
-                <a
-                  target="_blank"
-                  className="flex items-center justify-between py-1.5 text-gray-700"
-                  rel="noreferrer noopener"
-                >
-                  {label}
-                  <LinkIcon
-                    className="ml-1 text-opacity-40 text-black"
-                    color="#212121"
-                    width={16}
-                    height={16}
-                  />
-                </a>
+              <Link
+                key={label}
+                href={path}
+                target="_blank"
+                className="flex items-center justify-between py-1.5 text-gray-700"
+                rel="noreferrer noopener"
+              >
+                {label}
+                <LinkIcon
+                  className="ml-1 text-opacity-40 text-black"
+                  color="#212121"
+                  width={16}
+                  height={16}
+                />
               </Link>
             ))}
           </div>

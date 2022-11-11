@@ -15,20 +15,20 @@ export const Footer = (): ReactElement => {
       <div className="md:flex mb-10 md:space-x-40 justify-between hidden">
         <div className="flex flex-col space-y-2 text-left">
           {socialLinks.map(({ path, label }) => (
-            <Link key={label} href={path}>
-              <a
-                target="_blank"
-                className="flex items-center hover:underline"
-                rel="noreferrer noopener"
-              >
-                {label}
-                <LinkIcon
-                  className="ml-1 text-opacity-40 text-black"
-                  color="#212121"
-                  width={16}
-                  height={16}
-                />
-              </a>
+            <Link
+              key={label}
+              href={path}
+              target="_blank"
+              className="flex items-center hover:underline"
+              rel="noreferrer noopener"
+            >
+              {label}
+              <LinkIcon
+                className="ml-1 text-opacity-40 text-black"
+                color="#212121"
+                width={16}
+                height={16}
+              />
             </Link>
           ))}
         </div>
@@ -36,16 +36,17 @@ export const Footer = (): ReactElement => {
           {footerLinks.map(({ path, label }) => {
             const isLinkActive = router.pathname === path
             return (
-              <Link href={path ?? '#!'} key={label} scroll={false}>
-                <a
-                  tabIndex={path ? 0 : -1}
-                  className={clsx(
-                    isLinkActive && 'text-primary',
-                    !path && 'cursor-not-allowed text-gray-500'
-                  )}
-                >
-                  {label}
-                </a>
+              <Link
+                href={path ?? '#!'}
+                key={label}
+                scroll={false}
+                tabIndex={path ? 0 : -1}
+                className={clsx(
+                  isLinkActive && 'text-primary',
+                  !path && 'cursor-not-allowed text-gray-500'
+                )}
+              >
+                {label}
               </Link>
             )
           })}
