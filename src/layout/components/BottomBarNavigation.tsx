@@ -16,17 +16,18 @@ export const BottomBarNavigation = () => {
       {fixedNavLinks.map(({ path, label, icon }) => {
         const isLinkActive = router.pathname === path
         return (
-          <Link href={path ?? '#!'} key={label} scroll={false}>
-            <a
-              className={clsx(
-                isLinkActive && 'text-primary',
-                !path && 'cursor-not-allowed text-gray-500',
-                'h-full items-center flex justify-center flex-col'
-              )}
-            >
-              {icon()}
-              <span className="text-sm">{label}</span>
-            </a>
+          <Link
+            href={path ?? '#!'}
+            key={label}
+            scroll={false}
+            className={clsx(
+              isLinkActive && 'text-primary',
+              !path && 'cursor-not-allowed text-gray-500',
+              'h-full items-center flex justify-center flex-col'
+            )}
+          >
+            {icon()}
+            <span className="text-sm">{label}</span>
           </Link>
         )
       })}
