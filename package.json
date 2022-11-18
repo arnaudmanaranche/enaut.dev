@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "lint": "next lint",
     "start": "next start",
-    "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
+    "test-all": "yarn check-format && yarn check-lint && yarn check-types",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "2.0.13",
@@ -35,6 +36,7 @@
     "eslint-config-next": "13.0.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
+    "husky": "8.0.2",
     "postcss": "8.4.19",
     "prettier": "2.7.1",
     "tailwindcss": "3.2.4",
