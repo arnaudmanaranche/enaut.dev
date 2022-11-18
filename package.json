@@ -16,7 +16,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "yarn test-all",
-    "*.{json}": "sort-package-json"
+    "*.json": "sort-package-json"
   },
   "dependencies": {
     "@heroicons/react": "2.0.13",
