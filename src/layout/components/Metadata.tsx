@@ -24,6 +24,8 @@ export const Metadata = (): ReactElement => {
       <meta property="og:description" content={siteMetadata.description} />
       <meta property="og:title" content={siteMetadata.title} />
       <meta property="og:image" content={siteMetadata.socialBanner} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="600" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterHandle} />
       <meta name="twitter:title" content={siteMetadata.title} />
