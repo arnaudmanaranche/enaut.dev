@@ -8,7 +8,7 @@ export const siteMetadata = {
   language: 'en-us',
   siteUrl: 'https://enaut.dev',
   siteRepo: 'https://github.com/arnaudmanaranche/enaut.dev',
-  socialBanner: '',
+  socialBanner: 'https://enaut.dev/api/og',
   title: 'enaut.dev',
   twitter: `https://twitter.com/${TWITTER_HANDLE}`,
   twitterHandle: `@${TWITTER_HANDLE}`,

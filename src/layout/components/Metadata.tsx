@@ -20,15 +20,17 @@ export const Metadata = (): ReactElement => {
       <meta name="msapplication-TileColor" content="#FFFFFF" />
       <link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Braydon Coyer" />
+      <meta property="og:site_name" content={siteMetadata.author} />
       <meta property="og:description" content={siteMetadata.description} />
       <meta property="og:title" content={siteMetadata.title} />
       <meta property="og:image" content={siteMetadata.socialBanner} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="600" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterHandle} />
       <meta name="twitter:title" content={siteMetadata.title} />
       <meta name="twitter:description" content={siteMetadata.description} />
-      <meta name="twitter:image" content="" />
+      <meta name="twitter:image" content={siteMetadata.socialBanner} />
     </Head>
   )
 }
