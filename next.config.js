@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['s3.us-west-2.amazonaws.com'],
   },
   async redirects() {
     return [

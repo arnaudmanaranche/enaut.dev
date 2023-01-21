@@ -6,7 +6,7 @@
     "build": "next build",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "check-types": "tsc --pretty --noEmit",
+    "check-types": "bash -c tsc --pretty --noEmit",
     "dev": "next dev",
     "format": "prettier --write .",
     "lint": "next lint",

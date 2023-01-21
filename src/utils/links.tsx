@@ -23,7 +23,7 @@ export const headerLinks = [
   },
   {
     label: 'Readings',
-    path: null,
+    path: '/readings',
   },
 ]
 
@@ -88,7 +88,7 @@ export const fixedNavLinks = [
 export const fixedNavMoreLinks = [
   {
     label: 'Readings',
-    path: null,
+    path: '/readings',
     icon: () => {
       return (
         <BookOpenIcon
