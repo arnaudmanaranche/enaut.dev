@@ -50,7 +50,7 @@ const ReadingsPage = ({
                 {image ? (
                   <Image
                     src={image}
-                    alt=""
+                    alt={`Cover of the book named ${title}`}
                     width={200}
                     height={200}
                     className="self-center"
