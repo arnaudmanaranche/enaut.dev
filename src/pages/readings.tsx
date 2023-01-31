@@ -53,12 +53,8 @@ const ReadingsPage = ({
                     alt={`Cover of the book named ${title}`}
                     width={200}
                     height={200}
-                    quality={90}
+                    quality={100}
                     className="self-center"
-                    style={{
-                      width: 200,
-                      height: 300,
-                    }}
                   />
                 ) : (
                   <div className="bg-gray-100 h-[200px] w-[200px] self-center" />
