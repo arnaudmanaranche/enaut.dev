@@ -20,7 +20,7 @@
     "*.json": "sort-package-json"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.14",
+    "@heroicons/react": "2.0.15",
     "@notionhq/client": "2.2.3",
     "@vercel/og": "0.1.0",
     "clsx": "1.2.1",
