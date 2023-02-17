@@ -35,7 +35,7 @@ const Home: NextPage = () => (
       <h2 className="text-3xl font-bold mb-4 flex flex-col md:flex-row items-start md:items-baseline">
         What I&apos;m doing these days
         <span className="text-sm md:ml-4 text-primary mt-2 md:mt-0">
-          last update: 15/10/2022
+          last update: 02/17/2022
         </span>
       </h2>
       <div className="md:ml-6 space-y-7" role="list">
@@ -44,7 +44,7 @@ const Home: NextPage = () => (
             <>
               Building the new version of{` `}
               <a
-                href="https://lol-power-ranking.app/"
+                href="https://lol-power-ranking.vercel.app/"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="underline"
@@ -54,11 +54,6 @@ const Home: NextPage = () => (
               .
             </>
           </NowBlock.Title>
-          <NowBlock.Description>
-            Initially, it was a simple Next.js application. But I wanted to
-            build some backend skills so I decided to rebuild the API with
-            Nestjs framework.
-          </NowBlock.Description>
         </NowBlock>
         <NowBlock>
           <NowBlock.Title>
