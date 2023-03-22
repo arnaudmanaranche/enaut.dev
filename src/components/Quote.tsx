@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 
-import { Button } from '@/components'
-import { getQuotesData } from '@/libs'
-import { copyTextToClipboard } from '@/utils'
+import { Button } from '@/components/Button'
+import { getQuotesData } from '@/libs/notion'
+import { copyTextToClipboard } from '@/utils/copyTextToClipboard'
 
 const COPY_TO_CLIPBOARD = 'Copy to clipboard'
 const COPIED_TO_CLIPBOARD = 'Copied'

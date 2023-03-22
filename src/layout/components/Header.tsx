@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import type { ReactElement } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 
-import { ContactMe } from '@/components'
-import { headerLinks } from '@/utils'
+import { ContactMe } from '@/components/ContactMe'
+import { headerLinks } from '@/utils/links'
 
 export const Header = (): ReactElement => {
   const router = useRouter()

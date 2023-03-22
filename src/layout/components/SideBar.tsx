@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useContext, useRef } from 'react'
 
 import { GlobalNavigationContext } from '@/contexts/AppContext'
-import { fixedNavMoreLinks, socialLinks } from '@/utils'
+import { fixedNavMoreLinks, socialLinks } from '@/utils/links'
 
 export const SideBar = () => {
   const router = useRouter()

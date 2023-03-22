@@ -1,9 +1,10 @@
 import type { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
-import { PageWrapper } from '@/components'
-import type { ReleaseNote } from '@/libs'
-import { getChangelogData } from '@/libs'
+import type { ReleaseNote } from '@/libs/notion'
+import { getChangelogData } from '@/libs/notion'
+
+import { PageWrapper } from '../components/PageWrapper'
 
 const ChangelogPage = ({
   changelog,

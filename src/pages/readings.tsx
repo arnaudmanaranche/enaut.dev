@@ -4,10 +4,11 @@ import Image from 'next/image'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 
-import { PageWrapper } from '@/components'
-import type { Reading, ReadingStatus } from '@/libs'
-import { getReadingsData } from '@/libs'
-import { readingStatusBadgeBgColor } from '@/utils'
+import type { Reading, ReadingStatus } from '@/libs/notion'
+import { getReadingsData } from '@/libs/notion'
+import { readingStatusBadgeBgColor } from '@/utils/readingStatusBadgeBgColor'
+
+import { PageWrapper } from '../components/PageWrapper'
 
 const ReadingsPage = ({
   readings,

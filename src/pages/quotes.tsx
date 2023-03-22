@@ -1,9 +1,11 @@
 import type { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
-import { PageWrapper, Quote } from '@/components'
-import type { Quotes } from '@/libs'
-import { getQuotesData } from '@/libs'
+import type { Quotes } from '@/libs/notion'
+import { getQuotesData } from '@/libs/notion'
+
+import { PageWrapper } from '../components/PageWrapper'
+import { Quote } from '../components/Quote'
 
 const QuotesPages = ({ quotes }: { quotes: Quotes }): ReactElement => {
   return (

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useContext } from 'react'
 
 import { GlobalNavigationContext } from '@/contexts/AppContext'
-import { fixedNavLinks } from '@/utils'
+import { fixedNavLinks } from '@/utils/links'
 
 export const BottomBarNavigation = () => {
   const router = useRouter()

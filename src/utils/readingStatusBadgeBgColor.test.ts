@@ -1,4 +1,4 @@
-import type { ReadingStatus } from '@/libs'
+import type { ReadingStatus } from '@/libs/notion'
 
 import { readingStatusBadgeBgColor } from './readingStatusBadgeBgColor'
 

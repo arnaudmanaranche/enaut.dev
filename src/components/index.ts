@@ -1,6 +1,0 @@
-export * from './Button'
-export * from './ContactMe'
-export * from './NowBlock'
-export * from './NowPlaying'
-export * from './PageWrapper'
-export * from './Quote'

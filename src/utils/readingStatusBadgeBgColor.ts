@@ -1,4 +1,4 @@
-import type { ReadingStatus } from '@/libs'
+import type { ReadingStatus } from '@/libs/notion'
 
 export const readingStatusBadgeBgColor = (status: ReadingStatus): string => {
   switch (status) {

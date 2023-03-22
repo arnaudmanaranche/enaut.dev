@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 
-import { NowBlock } from '@/components'
+import { NowBlock } from '@/components/NowBlock'
 
 const Home: NextPage = () => (
   <div className="text-lg leading-8">
