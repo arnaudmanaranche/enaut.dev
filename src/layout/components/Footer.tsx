@@ -13,8 +13,8 @@ export const Footer = (): ReactElement => {
   const router = useRouter()
 
   return (
-    <footer className="border-t pb-20 md:pb-8 pt-4 text-center">
-      <div className="md:flex mb-10 md:space-x-40 justify-between hidden">
+    <footer className="border-t pb-20 pt-4 text-center md:pb-8">
+      <div className="mb-10 hidden justify-between md:flex md:space-x-40">
         <div className="flex flex-col space-y-2 text-left">
           {socialLinks.map(({ path, label }) => (
             <Link
@@ -26,7 +26,7 @@ export const Footer = (): ReactElement => {
             >
               {label}
               <LinkIcon
-                className="ml-1 text-opacity-40 text-black"
+                className="ml-1 text-black text-opacity-40"
                 color="#212121"
                 width={16}
                 height={16}
@@ -53,12 +53,12 @@ export const Footer = (): ReactElement => {
             )
           })}
         </div>
-        <div className="flex flex-col space-y-2 text-left justify-between">
+        <div className="flex flex-col justify-between space-y-2 text-left">
           <ContactMe />
         </div>
       </div>
       <NowPlaying />
-      <div className="flex justify-between flex-col space-y-4 md:flex-row md:space-y-0 text-sm">
+      <div className="flex flex-col justify-between space-y-4 text-sm md:flex-row md:space-y-0">
         <span>© Arnaud Manaranche {getCurrentFullYear}</span>
         <span>
           ▲ Powered by{' '}

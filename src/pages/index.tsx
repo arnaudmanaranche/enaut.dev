@@ -13,7 +13,7 @@ const Home: NextPage = () => (
       Right now I&apos;m working at&nbsp;
       <Link
         href="https://ornikar.com/"
-        className="text-[#4c34e0] hover:bg-gradient-to-r from-[#4c34e0] to-[#4c34e0] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
+        className="from-[#4c34e0] to-[#4c34e0] bg-[length:100%_1px] bg-bottom bg-no-repeat	text-[#4c34e0] hover:bg-gradient-to-r"
         target="_blank"
         rel="noreferrer noopener"
       >
@@ -24,7 +24,7 @@ const Home: NextPage = () => (
       <Link
         href="https://www.origins-digital.com/"
         target="_blank"
-        className="text-[#ff680a] hover:bg-gradient-to-r from-[#ff680a] to-[#ff680a] bg-bottom	bg-[length:100%_1px] bg-no-repeat"
+        className="from-[#ff680a] to-[#ff680a] bg-[length:100%_1px] bg-bottom bg-no-repeat	text-[#ff680a] hover:bg-gradient-to-r"
         rel="noreferrer noopener"
       >
         Origins Digital
@@ -32,13 +32,13 @@ const Home: NextPage = () => (
       , a sports digital agency.
     </p>
     <section className="mt-14">
-      <h2 className="text-3xl font-bold mb-4 flex flex-col md:flex-row items-start md:items-baseline">
+      <h2 className="mb-4 flex flex-col items-start text-3xl font-bold md:flex-row md:items-baseline">
         What I&apos;m doing these days
-        <span className="text-sm md:ml-4 text-primary mt-2 md:mt-0">
+        <span className="mt-2 text-sm text-primary md:ml-4 md:mt-0">
           last update: 02/17/2022
         </span>
       </h2>
-      <div className="md:ml-6 space-y-7" role="list">
+      <div className="space-y-7 md:ml-6" role="list">
         <NowBlock>
           <NowBlock.Title>
             <>

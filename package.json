@@ -16,8 +16,7 @@
     "test-all": "yarn check-format && yarn check-lint && yarn check-types"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "yarn test-all",
-    "*.json": "sort-package-json"
+    "*.{js,ts,tsx}": "yarn test-all"
   },
   "dependencies": {
     "@heroicons/react": "2.0.16",
@@ -50,6 +49,8 @@
     "lint-staged": "13.2.0",
     "postcss": "8.4.21",
     "prettier": "2.8.6",
+    "prettier-plugin-packagejson": "2.4.3",
+    "prettier-plugin-tailwindcss": "0.2.5",
     "sort-package-json": "2.4.1",
     "tailwindcss": "3.2.7",
     "typescript": "4.9.5"

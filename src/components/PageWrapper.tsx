@@ -12,10 +12,10 @@ export const PageWrapper = ({
   return (
     <div>
       <h1>
-        <span className="block text-base text-center text-primary tracking-wide font-semibold uppercase">
+        <span className="block text-center text-base font-semibold uppercase tracking-wide text-primary">
           {title}
         </span>
-        <span className="mt-2 block text-4xl text-center leading-10 font-bold sm:text-5xl mx-auto">
+        <span className="mx-auto mt-2 block text-center text-4xl font-bold leading-10 sm:text-5xl">
           {subTitle}
         </span>
       </h1>

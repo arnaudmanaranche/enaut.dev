@@ -27,8 +27,8 @@ export const Quote = ({
 
   return (
     <div className="flex flex-col items-start">
-      <p className="italic select-all relative customMark">“{text}”</p>
-      <div className="flex space-x-2 mt-6">
+      <p className="customMark relative select-all italic">“{text}”</p>
+      <div className="mt-6 flex space-x-2">
         <Button to={url}>Source</Button>
         <Button onClick={handleCopyToClipboard}>{copyButtonContent}</Button>
       </div>

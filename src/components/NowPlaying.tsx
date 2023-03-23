@@ -8,7 +8,7 @@ export const NowPlaying = (): ReactElement => {
   const { data } = useSWR<NowPlayingType>('/api/now-playing', fetcher)
 
   return (
-    <div className="md:flex hidden items-center mb-8 space-x-2 justify-center">
+    <div className="mb-8 hidden items-center justify-center space-x-2 md:flex">
       <svg className="h-4 w-4" viewBox="0 0 168 168">
         <path
           fill="#1ed760"

@@ -13,7 +13,7 @@ const ChangelogPage = ({
 }): ReactElement => {
   return (
     <PageWrapper title="Changelog" subTitle="Releases notes">
-      <div className="flow-root mt-20">
+      <div className="mt-20 flow-root">
         <div role="list" className="-mb-8">
           {changelog.map(({ title, description, date, url }, index) => {
             return (
@@ -28,14 +28,14 @@ const ChangelogPage = ({
                   <div>
                     <div className="relative px-1">
                       <div
-                        className={`h-6 w-6 ml-[5px] mt-1 border-2 bg-white rounded-full ring-2 ${
+                        className={`ml-[5px] mt-1 h-6 w-6 rounded-full border-2 bg-white ring-2 ${
                           index === 0 ? 'border-[#047857]' : 'border-gray-200'
-                        } ring-white flex items-center justify-center`}
+                        } flex items-center justify-center ring-white`}
                       >
                         {index === 0 ? (
                           <span className="flex h-2 w-2">
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#047857]"></span>
-                            <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#047857] opacity-75"></span>
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#047857]"></span>
+                            <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-[#047857] opacity-75"></span>
                           </span>
                         ) : null}
                       </div>
@@ -44,12 +44,12 @@ const ChangelogPage = ({
                   <div className="min-w-0 flex-1">
                     <div>
                       <div className="text-lg">
-                        <h2 className="font-medium mt-0">
+                        <h2 className="mt-0 font-medium">
                           <a
                             href={url}
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="bg-gradient-to-r from-black to-black bg-bottom	bg-[length:100%_1px] bg-no-repeat"
+                            className="bg-gradient-to-r from-black to-black bg-[length:100%_1px]	bg-bottom bg-no-repeat"
                           >
                             {title}
                           </a>

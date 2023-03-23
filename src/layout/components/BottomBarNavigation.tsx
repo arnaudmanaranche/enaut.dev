@@ -12,7 +12,7 @@ export const BottomBarNavigation = () => {
   const { isOpen, setIsOpen } = useContext(GlobalNavigationContext)
 
   return (
-    <div className="fixed z-10 w-full md:hidden grid grid-cols-4 h-16 items-center bottom-0 bg-white">
+    <div className="fixed bottom-0 z-10 grid h-16 w-full grid-cols-4 items-center bg-white md:hidden">
       {fixedNavLinks.map(({ path, label, icon }) => {
         const isLinkActive = router.pathname === path
         return (
@@ -23,7 +23,7 @@ export const BottomBarNavigation = () => {
             className={clsx(
               isLinkActive && 'text-primary',
               !path && 'cursor-not-allowed text-gray-500',
-              'h-full items-center flex justify-center flex-col'
+              'flex h-full flex-col items-center justify-center'
             )}
           >
             {icon()}
@@ -32,7 +32,7 @@ export const BottomBarNavigation = () => {
         )
       })}
       <div
-        className="h-full items-center flex justify-center flex-col"
+        className="flex h-full flex-col items-center justify-center"
         onClick={() => {
           setIsOpen(!isOpen)
         }}

@@ -30,14 +30,14 @@ export const Header = (): ReactElement => {
   return (
     <header
       className={clsx(
-        'border-solid pt-8 pb-4 px-6 md:px-0 sticky inset-0 bg-[#f9f8f8] border-b-2 backdrop-saturate-[180%] backdrop-blur-[20px] justify-self-start transition-colors duration-300 ease-in-out z-[9]',
+        'sticky inset-0 z-[9] justify-self-start border-b-2 border-solid bg-[#f9f8f8] px-6 pt-8 pb-4 backdrop-blur-[20px] backdrop-saturate-[180%] transition-colors duration-300 ease-in-out md:px-0',
         isScrollAtTop
           ? 'border-b-neutral-100 bg-opacity-80'
           : 'border-b-transparent bg-opacity-10'
       )}
     >
-      <div className="max-w-[766px] mx-auto flex items-center justify-between">
-        <span className="text-2xl md:flex hidden">
+      <div className="mx-auto flex max-w-[766px] items-center justify-between">
+        <span className="hidden text-2xl md:flex">
           Arnaud<b>Manaranche</b>
         </span>
         <span className="text-2xl md:hidden">
@@ -46,7 +46,7 @@ export const Header = (): ReactElement => {
         <div className="md:hidden">
           <ContactMe />
         </div>
-        <nav className="space-x-4 md:flex hidden">
+        <nav className="hidden space-x-4 md:flex">
           {headerLinks.map(({ path, label }) => {
             const isLinkActive = router.pathname === path
             return (
@@ -59,7 +59,7 @@ export const Header = (): ReactElement => {
                     isLinkActive && 'text-primary',
                     !isLinkActive && path && 'hover:bg-gray-100',
                     !path && 'cursor-not-allowed text-gray-500',
-                    ' p-1 sm:px-3 sm:py-2 rounded-lg transition-all'
+                    ' rounded-lg p-1 transition-all sm:px-3 sm:py-2'
                   )}
                 >
                   {label}

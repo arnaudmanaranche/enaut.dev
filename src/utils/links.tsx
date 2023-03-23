@@ -92,7 +92,7 @@ export const fixedNavMoreLinks = [
     icon: () => {
       return (
         <BookOpenIcon
-          className="ml-1 text-opacity-40 text-current"
+          className="ml-1 text-current text-opacity-40"
           color="#212121"
           width={16}
           height={16}
@@ -106,7 +106,7 @@ export const fixedNavMoreLinks = [
     icon: () => {
       return (
         <SparklesIcon
-          className="ml-1 text-opacity-40 text-current"
+          className="ml-1 text-current text-opacity-40"
           color="#212121"
           width={16}
           height={16}
@@ -120,7 +120,7 @@ export const fixedNavMoreLinks = [
     icon: () => {
       return (
         <AcademicCapIcon
-          className="ml-1 text-opacity-40 text-current"
+          className="ml-1 text-current text-opacity-40"
           color="#212121"
           width={16}
           height={16}
@@ -134,7 +134,7 @@ export const fixedNavMoreLinks = [
     icon: () => {
       return (
         <ChartBarIcon
-          className="ml-1 text-opacity-40 text-current"
+          className="ml-1 text-current text-opacity-40"
           color="#212121"
           width={16}
           height={16}

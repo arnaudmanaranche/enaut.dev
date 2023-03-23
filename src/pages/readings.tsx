@@ -20,7 +20,7 @@ const ReadingsPage = ({
   return (
     <PageWrapper title="Readings" subTitle="Books thoughts">
       <div className="mt-20">
-        <div className="flex flex-col md:flex-row sticky top-20 flex-1 w-full py-6 justify-around sm:justify-start bg-white">
+        <div className="sticky top-20 flex w-full flex-1 flex-col justify-around bg-white py-6 sm:justify-start md:flex-row">
           <span className="mb-4 md:mb-0 md:mr-4">Filter by status:</span>
           <select
             onChange={(e) => {
@@ -46,7 +46,7 @@ const ReadingsPage = ({
             .map(({ id, image, title, author, status }) => (
               <div
                 key={id}
-                className="flex flex-col justify-start p-3 rounded-md"
+                className="flex flex-col justify-start rounded-md p-3"
               >
                 {image ? (
                   <Image
@@ -58,7 +58,7 @@ const ReadingsPage = ({
                     className="self-center"
                   />
                 ) : (
-                  <div className="bg-gray-100 h-[200px] w-[200px] self-center" />
+                  <div className="h-[200px] w-[200px] self-center bg-gray-100" />
                 )}
                 <div className="mt-2 flex flex-col">
                   <p className="truncate">{title}</p>
@@ -66,7 +66,7 @@ const ReadingsPage = ({
                   {filterStatus === '' ? (
                     <span
                       className={clsx(
-                        'text-sm mt-3 w-fit px-2 rounded-sm',
+                        'mt-3 w-fit rounded-sm px-2 text-sm',
                         readingStatusBadgeBgColor(status)
                       )}
                     >

@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 
 const className =
-  'flex cursor-pointer transition-all font-semibold px-4 py-2 text-sm opacity-100 rounded-md text-gray-700 hover:text-gray-1000 shadow-xs bg-white border border-gray-400 border-opacity-30 hover:border-opacity-50 hover:shadow-sm justify-center'
+  'hover:text-gray-1000 shadow-xs flex cursor-pointer justify-center rounded-md border border-gray-400 border-opacity-30 bg-white px-4 py-2 text-sm font-semibold text-gray-700 opacity-100 transition-all hover:border-opacity-50 hover:shadow-sm'
 
 export const Button = ({
   children,

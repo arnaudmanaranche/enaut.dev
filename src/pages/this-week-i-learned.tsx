@@ -9,7 +9,7 @@ import { getTwilData } from '@/libs/notion'
 const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
   return (
     <PageWrapper title="This Week I Learned" subTitle="Doings and learnings">
-      <div className="mt-20 prose">
+      <div className="prose mt-20">
         {weeks.map((week) => (
           <section key={week.number}>
             <h2>Week {week.number}, 2022</h2>

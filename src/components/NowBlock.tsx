@@ -17,7 +17,7 @@ const Title = ({ children }: { children: ReactNode }) => (
 )
 
 const Description = ({ children }: { children: ReactNode }) => (
-  <div className="p-2 mt-2 text-base flex">
+  <div className="mt-2 flex p-2 text-base">
     <div>{children}</div>
   </div>
 )

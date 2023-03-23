@@ -17,13 +17,13 @@ export const SideBar = () => {
       <nav
         ref={scrollContainerRef}
         className={clsx(
-          'fixed inset-y-0 left-0 shadow-lg z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out sm:w-1/2 sm:pb-0 md:hidden',
+          'border-gray-150 fixed inset-y-0 left-0 z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r bg-white pb-10 shadow-lg transition duration-200 ease-in-out sm:w-1/2 sm:pb-0 md:hidden',
           !isOpen ? '-translate-x-full' : 'translate-x-0'
         )}
       >
         <div className="filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2">
           <div className="flex flex-none items-center justify-between pt-5 pb-10">
-            <h2 className="text-primary transform-gpu text-sm font-bold line-clamp-1">
+            <h2 className="line-clamp-1 transform-gpu text-sm font-bold text-primary">
               Navigation
             </h2>
             <XCircleIcon
@@ -34,7 +34,7 @@ export const SideBar = () => {
               }}
             />
           </div>
-          <div className="border-b pb-2 space-y-1">
+          <div className="space-y-1 border-b pb-2">
             {fixedNavMoreLinks.map(({ path, label, icon }) => {
               const isLinkActive = router.pathname === path
 
@@ -50,7 +50,7 @@ export const SideBar = () => {
                   className={clsx(
                     isLinkActive && 'bg-[#047857] text-white',
                     !path && 'cursor-not-allowed text-gray-500',
-                    'flex items-center justify-between text-gray-700  rounded-md px-2 py-1.5'
+                    'flex items-center justify-between rounded-md  px-2 py-1.5 text-gray-700'
                   )}
                 >
                   {label}
@@ -62,7 +62,7 @@ export const SideBar = () => {
             })}
           </div>
           <div>
-            <h3 className="text-xs font-semibold pt-5 pb-2 text-gray-1000 text-opacity-40">
+            <h3 className="text-gray-1000 pt-5 pb-2 text-xs font-semibold text-opacity-40">
               Online
             </h3>
             {socialLinks.map(({ path, label }) => (
@@ -75,7 +75,7 @@ export const SideBar = () => {
               >
                 {label}
                 <LinkIcon
-                  className="ml-1 text-opacity-40 text-black"
+                  className="ml-1 text-black text-opacity-40"
                   color="#212121"
                   width={16}
                   height={16}
