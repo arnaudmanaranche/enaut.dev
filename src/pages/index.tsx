@@ -42,7 +42,7 @@ const Home: NextPage = () => (
         <NowBlock>
           <NowBlock.Title>
             <>
-              Building the new version of{` `}
+              Building{` `}
               <a
                 href="https://lol-power-ranking.vercel.app/"
                 target="_blank"
@@ -51,24 +51,8 @@ const Home: NextPage = () => (
               >
                 LoL Power Ranking
               </a>
-              .
-            </>
-          </NowBlock.Title>
-        </NowBlock>
-        <NowBlock>
-          <NowBlock.Title>
-            <>
-              Reading Vitalik Buterin&apos;s book:{` `}
-              <a
-                href="https://proofofstake.gitcoin.co/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                &quot;Proof of Stake: The Making of Ethereum and the Philosophy
-                of Blockchains&quot;
-              </a>
-              .
+              : a dedicated platform to create and share your own rankings of
+              yours favorites League of Legends tournaments.
             </>
           </NowBlock.Title>
         </NowBlock>
@@ -82,10 +66,9 @@ const Home: NextPage = () => (
                 rel="noreferrer noopener"
                 className="underline"
               >
-                International Marathon of Biarritz
+                Marathon of Biarritz
               </a>
-              ,{` `}
-              which is plan on 05/07/2023.
+              .
             </>
           </NowBlock.Title>
           <NowBlock.Description>
