@@ -30,8 +30,10 @@ export const Header = (): ReactElement => {
   return (
     <header
       className={clsx(
-        'border-solid pt-8 pb-4 px-6 md:px-0 sticky inset-0 bg-white bg-opacity-80 border-b-2 backdrop-saturate-[180%] backdrop-blur-[20px] justify-self-start transition-colors duration-300 ease-in-out z-[9]',
-        isScrollAtTop ? 'border-b-neutral-100' : 'border-b-transparent'
+        'border-solid pt-8 pb-4 px-6 md:px-0 sticky inset-0 bg-[#f9f8f8] border-b-2 backdrop-saturate-[180%] backdrop-blur-[20px] justify-self-start transition-colors duration-300 ease-in-out z-[9]',
+        isScrollAtTop
+          ? 'border-b-neutral-100 bg-opacity-80'
+          : 'border-b-transparent bg-opacity-10'
       )}
     >
       <div className="max-w-[766px] mx-auto flex items-center justify-between">

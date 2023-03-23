@@ -13,7 +13,7 @@ export const Footer = (): ReactElement => {
   const router = useRouter()
 
   return (
-    <footer className="border-t mb-20 md:mb-8 pt-4 text-center">
+    <footer className="border-t pb-20 md:pb-8 pt-4 text-center">
       <div className="md:flex mb-10 md:space-x-40 justify-between hidden">
         <div className="flex flex-col space-y-2 text-left">
           {socialLinks.map(({ path, label }) => (
