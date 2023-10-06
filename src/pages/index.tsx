@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 
-import { NowBlock } from '@/components/NowBlock'
-
 const Home: NextPage = () => (
   <div className="text-lg leading-8">
     <h1 className="text-6xl font-bold">Hello.</h1>
@@ -31,66 +29,6 @@ const Home: NextPage = () => (
       </Link>
       , a sports digital agency.
     </p>
-    <section className="mt-14">
-      <h2 className="mb-4 flex flex-col items-start text-3xl font-bold md:flex-row md:items-baseline">
-        What I&apos;m doing these days
-        <span className="mt-2 text-sm text-primary md:ml-4 md:mt-0">
-          last update: 02/17/2022
-        </span>
-      </h2>
-      <div className="space-y-7 md:ml-6" role="list">
-        <NowBlock>
-          <NowBlock.Title>
-            <>
-              Building{` `}
-              <a
-                href="https://lol-power-ranking.vercel.app/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                LoL Power Ranking
-              </a>
-              : a dedicated platform to create and share your own rankings of
-              yours favorites League of Legends tournaments.
-            </>
-          </NowBlock.Title>
-        </NowBlock>
-        <NowBlock>
-          <NowBlock.Title>
-            <>
-              Training for the next{` `}
-              <a
-                href="https://www.marathonbiarritz.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="underline"
-              >
-                Marathon of Biarritz
-              </a>
-              .
-            </>
-          </NowBlock.Title>
-          <NowBlock.Description>
-            <>
-              <p>
-                I publish all my trainings on{' '}
-                <a
-                  href="https://www.strava.com/athletes/103494464"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline"
-                >
-                  {` `}
-                  Strava
-                </a>
-                .
-              </p>
-            </>
-          </NowBlock.Description>
-        </NowBlock>
-      </div>
-    </section>
   </div>
 )
 
