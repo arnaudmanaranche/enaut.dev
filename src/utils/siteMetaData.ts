@@ -1,4 +1,4 @@
-const TWITTER_HANDLE = 'bearnais_volant'
+const TWITTER_HANDLE = '0xGorri'
 
 export const siteMetadata = {
   author: 'Arnaud Manaranche',

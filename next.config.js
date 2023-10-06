@@ -8,7 +8,7 @@ const nextConfig = {
     return [
       {
         source: '/twitter',
-        destination: 'https://twitter.com/bearnais_volant',
+        destination: 'https://twitter.com/0xGorri',
         permanent: true,
         basePath: false,
       },
