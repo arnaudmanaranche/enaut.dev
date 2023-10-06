@@ -8,7 +8,7 @@ import { SideBar } from './components/SideBar'
 
 export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
   return (
-    <div className="relative bg-[url('/background.png')] font-sans">
+    <div className="relative font-sans">
       <Metadata />
       <Header />
       <div className="mx-auto max-w-[766px]">
