@@ -72,7 +72,7 @@ export type TwilWeek = {
   }>
 }
 
-export const getTwilData = async () => {
+export const getTwilData = async (year: string) => {
   const response: QueryDatabaseResponse = await notion.databases.query({
     database_id: `${process.env.TWIL_DATABASE_ID}`,
     sorts: [
@@ -81,6 +81,12 @@ export const getTwilData = async () => {
         direction: 'descending',
       },
     ],
+    filter: {
+      property: 'Year',
+      number: {
+        equals: parseInt(year),
+      },
+    },
   })
 
   const weeks: Array<TwilWeek> = []

@@ -6,13 +6,22 @@ import { PageWrapper } from '@/components/PageWrapper'
 import type { TwilWeek } from '@/libs/notion'
 import { getTwilData } from '@/libs/notion'
 
-const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
+import { YEARS } from './index'
+
+interface TwilYearPageProps {
+  weeks: TwilWeek[]
+  year: string
+}
+
+const TwilYearPage = ({ weeks, year }: TwilYearPageProps): ReactElement => {
   return (
     <PageWrapper title="This Week I Learned" subTitle="Doings and learnings">
       <div className="prose mt-20">
         {weeks.map((week) => (
           <section key={week.number}>
-            <h2>Week {week.number}, 2022</h2>
+            <h2>
+              Week {week.number}, {year}
+            </h2>
             <ul>
               {week.items.map((item) => (
                 <li key={item.id}>
@@ -41,12 +50,25 @@ const TwilPage = ({ weeks }: { weeks: TwilWeek[] }): ReactElement => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const weeks = await getTwilData()
+export async function getStaticPaths() {
+  const paths = YEARS.map((year) => ({
+    params: { year },
+  }))
 
   return {
-    props: { weeks },
+    paths,
+    fallback: false,
   }
 }
 
-export default TwilPage
+export const getStaticProps: GetStaticProps = async (context) => {
+  const year = context.params?.year as string
+
+  const weeks = await getTwilData(year)
+
+  return {
+    props: { weeks, year },
+  }
+}
+
+export default TwilYearPage
