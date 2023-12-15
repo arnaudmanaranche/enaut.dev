@@ -22,7 +22,7 @@ export const SideBar = () => {
         )}
       >
         <div className="filter-blur sticky top-0 z-10 flex flex-col justify-center px-3 py-2">
-          <div className="flex flex-none items-center justify-between pt-5 pb-10">
+          <div className="flex flex-none items-center justify-between pb-10 pt-5">
             <h2 className="line-clamp-1 transform-gpu text-sm font-bold text-primary">
               Navigation
             </h2>
@@ -42,7 +42,6 @@ export const SideBar = () => {
                 <Link
                   href={path ?? '#!'}
                   key={label}
-                  scroll={false}
                   onClick={() => {
                     path ? setIsOpen(false) : null
                   }}
@@ -62,7 +61,7 @@ export const SideBar = () => {
             })}
           </div>
           <div>
-            <h3 className="text-gray-1000 pt-5 pb-2 text-xs font-semibold text-opacity-40">
+            <h3 className="text-gray-1000 pb-2 pt-5 text-xs font-semibold text-opacity-40">
               Online
             </h3>
             {socialLinks.map(({ path, label }) => (

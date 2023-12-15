@@ -41,7 +41,6 @@ export const Footer = (): ReactElement => {
               <Link
                 href={path ?? '#!'}
                 key={label}
-                scroll={false}
                 tabIndex={path ? 0 : -1}
                 className={clsx(
                   isLinkActive && 'text-primary',

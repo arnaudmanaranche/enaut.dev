@@ -19,7 +19,6 @@ export const BottomBarNavigation = () => {
           <Link
             href={path ?? '#!'}
             key={label}
-            scroll={false}
             className={clsx(
               isLinkActive && 'text-primary',
               !path && 'cursor-not-allowed text-gray-500',

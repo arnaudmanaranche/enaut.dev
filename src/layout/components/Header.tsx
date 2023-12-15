@@ -30,7 +30,7 @@ export const Header = (): ReactElement => {
   return (
     <header
       className={clsx(
-        'sticky inset-0 z-[9] justify-self-start border-b-2 border-solid bg-[#f9f8f8] px-6 pt-8 pb-4 backdrop-blur-[20px] backdrop-saturate-[180%] transition-colors duration-300 ease-in-out md:px-0',
+        'sticky inset-0 z-[9] justify-self-start border-b-2 border-solid bg-[#f9f8f8] px-6 pb-4 pt-8 backdrop-blur-[20px] backdrop-saturate-[180%] transition-colors duration-300 ease-in-out md:px-0',
         isScrollAtTop
           ? 'border-b-neutral-100 bg-opacity-80'
           : 'border-b-transparent bg-opacity-10'
@@ -53,7 +53,6 @@ export const Header = (): ReactElement => {
               <span key={label}>
                 <Link
                   href={path ?? '#!'}
-                  scroll={false}
                   tabIndex={path ? 0 : -1}
                   className={clsx(
                     isLinkActive && 'text-primary',
