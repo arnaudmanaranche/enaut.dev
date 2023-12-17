@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
-    "@notionhq/client": "2.2.3",
+    "@notionhq/client": "2.2.14",
     "@vercel/og": "0.4.1",
     "clsx": "1.2.1",
     "next": "14.0.4",
