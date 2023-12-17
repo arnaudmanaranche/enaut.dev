@@ -19,7 +19,7 @@
     "*.{js,ts,tsx}": "yarn test-all"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.16",
+    "@heroicons/react": "2.0.18",
     "@notionhq/client": "2.2.3",
     "@vercel/og": "0.4.1",
     "clsx": "1.2.1",
