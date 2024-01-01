@@ -9,6 +9,17 @@ interface RefreshTokenResponse {
 const SCOPES = 'offline read:sleep read:workout'
 
 const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
+  const whoopStoredRefreshToken = await fetch(
+    `https://api.vercel.com/v1/projects/${process.env.VERCEL_PROJECT_ID}/env/${process.env.VERCEL_WHOOP_REFRESH_TOKEN_ENV_VARIABLE_ID}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
+      },
+    }
+  )
+
+  const refreshToken = await whoopStoredRefreshToken.json()
+
   const refreshTokensReponse = await fetch(`${process.env.WHOOP_TOKEN_URL}`, {
     method: 'POST',
     headers: {
@@ -16,7 +27,7 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
     },
     body: new URLSearchParams({
       grant_type: 'refresh_token',
-      refresh_token: `${process.env.WHOOP_REFRESH_TOKEN}`,
+      refresh_token: refreshToken.value,
       client_id: `${process.env.WHOOP_CLIENT_ID}`,
       client_secret: `${process.env.WHOOP_CLIENT_SECRET}`,
       scope: SCOPES,
