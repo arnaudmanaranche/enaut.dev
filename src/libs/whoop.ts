@@ -1,9 +1,6 @@
 interface RefreshTokenResponse {
   access_token: string
-  expires_in: number
   refresh_token: string
-  scope: string
-  token_type: string
 }
 
 const SCOPES = 'offline read:sleep read:workout'
@@ -20,24 +17,33 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
 
   const refreshToken = await whoopStoredRefreshToken.json()
 
-  const refreshTokensReponse = await fetch(`${process.env.WHOOP_TOKEN_URL}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({
-      grant_type: 'refresh_token',
-      refresh_token: refreshToken.value,
-      client_id: `${process.env.WHOOP_CLIENT_ID}`,
-      client_secret: `${process.env.WHOOP_CLIENT_SECRET}`,
-      scope: SCOPES,
-      redirect_uri: 'https://oauth.pstmn.io/v1/callback',
-    }),
-  })
+  try {
+    const refreshTokensReponse = await fetch(`${process.env.WHOOP_TOKEN_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken.value,
+        client_id: `${process.env.WHOOP_CLIENT_ID}`,
+        client_secret: `${process.env.WHOOP_CLIENT_SECRET}`,
+        scope: SCOPES,
+        redirect_uri: 'https://oauth.pstmn.io/v1/callback',
+      }),
+    })
 
-  const response = await refreshTokensReponse.json()
+    const response = await refreshTokensReponse.json()
 
-  return response
+    return response
+  } catch (error) {
+    console.log(error)
+
+    return {
+      access_token: '',
+      refresh_token: '',
+    }
+  }
 }
 
 export const getSleepData = async () => {
@@ -52,15 +58,21 @@ export const getSleepData = async () => {
     body: JSON.stringify({ refreshToken }),
   })
 
-  const sleepData = await fetch(
-    // To be added as env variable
-    'https://api.prod.whoop.com/developer/v1/activity/sleep',
-    {
-      headers: {
-        Authorization: `Bearer ${access_token}`,
-      },
-    }
-  )
+  try {
+    const sleepData = await fetch(
+      // To be added as env variable
+      'https://api.prod.whoop.com/developer/v1/activity/sleep',
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      }
+    )
 
-  return sleepData.json()
+    return sleepData.json()
+  } catch (error) {
+    console.log(error)
+
+    return {}
+  }
 }
