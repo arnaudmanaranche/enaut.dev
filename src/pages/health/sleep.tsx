@@ -1,8 +1,8 @@
-import type { GetStaticProps } from 'next'
+// import type { GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
 
 import { PageWrapper } from '@/components/PageWrapper'
-import { getSleepData } from '@/libs/whoop'
+// import { getSleepData } from '@/libs/whoop'
 
 interface SleepPageProps {
   sleepData: unknown
@@ -18,13 +18,13 @@ const SleepPage = ({ sleepData }: SleepPageProps): ReactElement => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const sleepData = await getSleepData()
+// export const getStaticProps: GetStaticProps = async () => {
+//   const sleepData = await getSleepData()
 
-  return {
-    props: { sleepData },
-    revalidate: 86400, // 1 day
-  }
-}
+//   return {
+//     props: { sleepData },
+//     revalidate: 86400, // 1 day
+//   }
+// }
 
 export default SleepPage
