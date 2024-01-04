@@ -28,7 +28,6 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
       client_id: `${process.env.WHOOP_CLIENT_ID}`,
       client_secret: `${process.env.WHOOP_CLIENT_SECRET}`,
       scope: SCOPES,
-      redirect_uri: 'https://oauth.pstmn.io/v1/callback',
     }),
   })
 
