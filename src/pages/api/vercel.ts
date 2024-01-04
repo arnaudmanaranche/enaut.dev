@@ -11,11 +11,10 @@ export default async function handler(
       headers: {
         Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
       },
-      body: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error `value` is accepted by the Vercel API
+      body: JSON.stringify({
         value: req.body.refreshToken,
-      },
+        comment: `updated on ${new Date().toISOString()}`,
+      }),
     }
   )
 

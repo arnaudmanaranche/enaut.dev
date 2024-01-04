@@ -33,15 +33,6 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
 
   const response = await refreshTokensReponse.json()
 
-  if (!response.ok) {
-    console.log(response)
-
-    return {
-      access_token: '',
-      refresh_token: '',
-    }
-  }
-
   return response
 }
 
