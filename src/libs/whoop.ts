@@ -33,6 +33,8 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
 
   const response = await refreshTokensReponse.json()
 
+  console.log({ response })
+
   return response
 }
 

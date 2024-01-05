@@ -17,9 +17,7 @@ namespace NodeJS {
     // Whoop
     WHOOP_CLIENT_ID: string
     WHOOP_CLIENT_SECRET: string
-    WHOOP_AUTHORIZATION_URL: string
     WHOOP_TOKEN_URL: string
-    WHOOP_ACCESS_TOKEN: string
     WHOOP_REFRESH_TOKEN: string
   }
 }
