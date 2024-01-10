@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 
 import { PageWrapper } from '@/components/PageWrapper'
 
-export const YEARS = ['2022', '2023']
+export const YEARS = ['2022', '2023', '2024']
 
 const TwilPage = (): ReactElement => {
   return (
