@@ -18,7 +18,7 @@ export const NowPlaying = (): ReactElement => {
       <div className="flex">
         {data?.songUrl ? (
           <a
-            className="capsize text-gray-800"
+            className="capsize max-w-sm truncate text-gray-800"
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
