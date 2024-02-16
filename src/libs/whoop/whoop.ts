@@ -1,3 +1,5 @@
+import { whoopSleepMockData } from './whoop.mock'
+
 interface RefreshTokenResponse {
   access_token: string
   refresh_token: string
@@ -39,30 +41,32 @@ const getRefreshTokens = async (): Promise<RefreshTokenResponse> => {
 }
 
 export const getSleepData = async () => {
-  const { access_token, refresh_token: refreshToken } = await getRefreshTokens()
+  if (process.env.NODE_ENV === 'production') {
+    const { access_token: accessToken, refresh_token: refreshToken } =
+      await getRefreshTokens()
 
-  if (access_token && refreshToken) {
-    // To be run only on production
-    await fetch('https://enaut.dev/api/vercel', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ refreshToken }),
-    })
-
-    const sleepData = await fetch(
-      // To be added as env variable
-      'https://api.prod.whoop.com/developer/v1/activity/sleep',
-      {
+    if (accessToken && refreshToken) {
+      await fetch('https://enaut.dev/api/vercel', {
+        method: 'POST',
         headers: {
-          Authorization: `Bearer ${access_token}`,
+          'Content-Type': 'application/json',
         },
-      }
-    )
+        body: JSON.stringify({ refreshToken }),
+      })
 
-    return sleepData.json()
+      const sleepData = await fetch(
+        // To be added as env variable
+        'https://api.prod.whoop.com/developer/v1/activity/sleep',
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      )
+
+      return sleepData.json()
+    }
   }
 
-  return {}
+  return whoopSleepMockData
 }
