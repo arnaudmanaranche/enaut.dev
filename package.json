@@ -30,7 +30,7 @@
     "swr": "2.2.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.11",
+    "@tailwindcss/typography": "0.5.12",
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/react": "13.4.0",
     "@types/node": "20.11.30",
