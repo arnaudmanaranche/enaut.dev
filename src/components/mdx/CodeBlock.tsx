@@ -2,7 +2,7 @@ import type { DropedProps } from '@9gustin/react-notion-render/dist/hoc/withCont
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import { useCallback, useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 import { copyTextToClipboard } from '@/utils/copyTextToClipboard'
 
