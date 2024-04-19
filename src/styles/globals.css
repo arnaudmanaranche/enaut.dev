@@ -2,22 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-display: optional;
-  src: url(/fonts/raleway.woff2) format('woff2');
+.rnr-heading_2,
+.rnr-heading_3 {
+  margin: 20px 0 10px;
 }
 
-.customMark::before {
-  background-color: #76ba99;
-  content: '';
-  width: 2rem;
-  height: 0.7rem;
-  left: -2px;
-  top: 8px;
-  z-index: -1;
-  transform: rotate(-2deg);
+.rnr-paragraph {
+  line-height: 25px;
+  margin: 10px 0;
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 35px;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+pre {
+  margin: 20px 0;
+}
+
+.copyButton {
   position: absolute;
-  bottom: 0;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+  opacity: 0;
+  color: #0c0a09;
+  transition: background 200ms, box-shadow 200ms, opacity 200ms;
+}
+
+.copyButton:focus-visible {
+  opacity: 1;
+}
+
+.copyButton:hover {
+  background: #0c0a09;
+  color: #fff;
+}
+
+.copyButton:focus-visible {
+  box-shadow: 0 0 0 1px red;
+}
+
+.copyButton > div {
+  display: flex;
 }

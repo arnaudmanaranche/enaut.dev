@@ -1,5 +1,2 @@
-export * from './books'
-export * from './changelog'
+export * from './blog'
 export * from './notion.client'
-export * from './quotes'
-export * from './twil'

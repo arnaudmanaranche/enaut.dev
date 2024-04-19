@@ -4,16 +4,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link
-            rel="preload"
-            href="/fonts/raleway.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-        </Head>
-        <body>
+        <Head />
+        <body className="bg-[#0c0a09] text-white">
           <Main />
           <NextScript />
         </body>

@@ -7,13 +7,7 @@ namespace NodeJS {
     VERCEL_WHOOP_REFRESH_TOKEN_ENV_VARIABLE_ID: string
     // Notion
     NOTION_SECRET: string
-    CHANGELOG_DATABASE_ID: string
-    QUOTES_DATABASE_ID: string
-    READINGS_DATABASE_ID: string
-    TWIL_DATABASE_ID: string
-    // Spotify
-    SPOTIFY_REFRESH_TOKEN: string
-    SPOTIFY_BASE64_ENCODED: string
+    BLOG_DATABASE_ID: string
     // Whoop
     WHOOP_CLIENT_ID: string
     WHOOP_CLIENT_SECRET: string
