@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next'
+import Head from 'next/head'
 import Link from 'next/link'
 
 import type { BlogPostsList } from '@/libs/notion/blog'
@@ -7,6 +8,9 @@ import { getBlogPostsList } from '@/libs/notion/blog'
 const Home = ({ postsList }: { postsList: BlogPostsList[] }) => {
   return (
     <div>
+      <Head>
+        <title>enaut.dev | Frontend Engineer</title>
+      </Head>
       <h2 className="mb-5 text-lg">Posts</h2>
       {postsList.map((post) => (
         <p key={post.id}>

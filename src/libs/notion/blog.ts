@@ -33,23 +33,28 @@ export const getBlogPostsList = async () => {
 }
 
 export const getBlogPostBySlug = async (slug: string) => {
-  const response = await notionClient.databases.query({
+  const dbBlogPost = await notionClient.databases.query({
     database_id: `${process.env.BLOG_DATABASE_ID}`,
+    filter: {
+      property: 'slug',
+      title: {
+        equals: slug,
+      },
+    },
   })
 
-  const dbBlogPost = response.results.find(
-    (result: any) => result.properties.slug.rich_text[0].plain_text === slug
-  ) as any
+  if (dbBlogPost.results.length) {
+    const data = dbBlogPost.results[0] as any
 
-  if (dbBlogPost?.id) {
     const blogPost = await notionClient.blocks.children.list({
-      block_id: dbBlogPost.id,
+      block_id: data.id,
     })
 
     return {
       blocks: blogPost.results,
-      title: dbBlogPost.properties.name.title[0].plain_text,
-      createdAt: dbBlogPost.created_time,
+      title: data?.properties.name.title[0].plain_text,
+      createdAt: data?.created_time,
+      description: data.properties.description.rich_text[0].plain_text,
     }
   }
 

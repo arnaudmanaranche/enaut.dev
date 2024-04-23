@@ -2,6 +2,7 @@ import type { NotionBlock } from '@9gustin/react-notion-render'
 import { Render, withContentValidation } from '@9gustin/react-notion-render'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { usePathname } from 'next/navigation'
 import { type ReactElement } from 'react'
 
 import { CodeBlock } from '@/components/mdx/CodeBlock'
@@ -12,14 +13,35 @@ interface TwilYearPageProps {
     blocks: NotionBlock[]
     title: string
     createdAt: string
+    description: string
   }
 }
 
 const BlogPostPage = ({ blogPostData }: TwilYearPageProps): ReactElement => {
+  const pathname = usePathname()
+
   return (
     <>
       <Head>
         <title>{blogPostData.title}</title>
+        <meta name="description" content={blogPostData.description} />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`https://enaut.dev/blog/${pathname}`}
+        />
+        <meta property="og:title" content={blogPostData.title} />
+        <meta property="og:description" content={blogPostData.description} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://enaut.dev/blog/${pathname}`}
+        />
+        <meta property="twitter:title" content={blogPostData.title} />
+        <meta
+          property="twitter:description"
+          content={blogPostData.description}
+        />
       </Head>
       <div className="space-y-4 p-4 text-center">
         <h1 className=" text-4xl">{blogPostData.title}</h1>
