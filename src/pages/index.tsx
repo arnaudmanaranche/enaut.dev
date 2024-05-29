@@ -8,7 +8,7 @@ import { getMonthAndYearFromDate } from '@/utils/getMonthAndYearFromDate'
 
 const Home = ({ postsList }: { postsList: BlogPostsList[] }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>enaut.dev | Frontend Engineer</title>
       </Head>
@@ -21,7 +21,7 @@ const Home = ({ postsList }: { postsList: BlogPostsList[] }) => {
           </Link>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 
