@@ -20,14 +20,19 @@ const Home = ({ postsList }: HomeProps): ReactNode => {
       </Head>
       <AnimateEnter>
         <h2 className="mb-5 text-lg">Posts</h2>
-        {postsList.map((post) => (
-          <div key={post.id} className=" text-[#a8a29e] hover:text-[#ffffff]">
-            <Link href={`/blog/${post.slug}`} className="flex justify-between">
-              <span>{post.title}</span>
-              <span>{getMonthAndYearFromDate(new Date(post.createdAt))}</span>
-            </Link>
-          </div>
-        ))}
+        <div className="space-y-3">
+          {postsList.map((post) => (
+            <div key={post.id} className=" text-[#a8a29e] hover:text-[#ffffff]">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="flex justify-between"
+              >
+                <span>{post.title}</span>
+                <span>{getMonthAndYearFromDate(new Date(post.createdAt))}</span>
+              </Link>
+            </div>
+          ))}
+        </div>
       </AnimateEnter>
     </>
   )
