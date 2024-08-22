@@ -22,8 +22,6 @@ export const getBlogPostsList = async () => {
   response.results.map((blogPost: any) => {
     const title = blogPost.properties.name.title[0].plain_text
 
-    console.log(blogPost.created_time)
-
     blogPostsList.push({
       title,
       id: blogPost.id,
