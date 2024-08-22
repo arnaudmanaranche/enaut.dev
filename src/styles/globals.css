@@ -2,14 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.rnr-container :any-link,
+.rnr-container a {
+  opacity: 1;
+}
+
 .rnr-heading_2,
 .rnr-heading_3 {
   margin: 20px 0 10px;
+  line-height: 40px;
+  color: #ffffff;
+  opacity: 1;
 }
 
 .rnr-paragraph {
-  line-height: 25px;
+  line-height: 1.6;
   margin: 10px 0;
+  color: #d1d5db;
+}
+
+.rnr-bulleted_list_item {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 10px;
+}
+
+.rnr-bulleted_list_item::marker {
+  color: #d1d5db;
 }
 
 ol {

@@ -43,9 +43,11 @@ const BlogPostPage = ({ blogPostData }: TwilYearPageProps): ReactElement => {
           content={blogPostData.description}
         />
       </Head>
-      <div className="space-y-4 p-4 text-center">
-        <h1 className=" text-4xl">{blogPostData.title}</h1>
-        <div>{new Date(blogPostData.createdAt).toLocaleDateString()}</div>
+      <div className="mb-10 space-y-4">
+        <h1 className="text-5xl font-bold">{blogPostData.title}</h1>
+        <div className="italic">
+          Published on {new Date(blogPostData.createdAt).toLocaleDateString()}
+        </div>
       </div>
       <Render
         blocks={blogPostData.blocks}
