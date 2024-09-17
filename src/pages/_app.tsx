@@ -1,10 +1,18 @@
 import type { AppProps } from 'next/app'
+import { Manrope } from 'next/font/google'
 import Head from 'next/head'
 
 import { Layout } from '@/layout/Layout'
 
 import '@9gustin/react-notion-render/dist/index.css'
 import '../styles/globals.css'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-manrope',
+  display: 'optional',
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -42,9 +50,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <div className={`${manrope.variable}`}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </div>
     </>
   )
 }
