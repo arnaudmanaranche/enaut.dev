@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion'
-import type { ReactElement } from 'react'
+import { useRouter } from 'next/router'
+import type { ReactNode } from 'react'
 
-export const Header = (): ReactElement => {
+export const Header = (): ReactNode => {
+  const router = useRouter()
+
   return (
     <header className="mb-28 mt-20">
       <div className="mx-auto flex items-center justify-between">
         <svg
+          onClick={() => {
+            router.push('/')
+          }}
+          className="cursor-pointer"
           width="80"
           height="80"
           viewBox="0 0 242 317"

@@ -1,8 +1,8 @@
-import type { ReactElement, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 import { Header } from './components/Header'
 
-export const Layout = ({ children }: { children: ReactNode }): ReactElement => {
+export const Layout = ({ children }: { children: ReactNode }): ReactNode => {
   return (
     <div className="mx-auto max-w-3xl">
       <Header />
