@@ -3,21 +3,22 @@ import { Render, withContentValidation } from '@9gustin/react-notion-render'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { usePathname } from 'next/navigation'
-import { type ReactElement } from 'react'
+import type { ReactNode } from 'react'
 
 import { CodeBlock } from '@/components/mdx/CodeBlock'
 import { getBlogPostBySlug, getBlogPostsList } from '@/libs/notion/blog'
 
-interface TwilYearPageProps {
+interface BlogPostPageProps {
   blogPostData: {
     blocks: NotionBlock[]
     title: string
     createdAt: string
     description: string
+    tags: string[]
   }
 }
 
-const BlogPostPage = ({ blogPostData }: TwilYearPageProps): ReactElement => {
+const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
   const pathname = usePathname()
 
   return (
@@ -45,8 +46,17 @@ const BlogPostPage = ({ blogPostData }: TwilYearPageProps): ReactElement => {
       </Head>
       <div className="mb-10 space-y-4">
         <h1 className="text-5xl font-bold">{blogPostData.title}</h1>
-        <div className="italic">
-          Published on {new Date(blogPostData.createdAt).toLocaleDateString()}
+        <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
+          <div className="italic">
+            Published on {new Date(blogPostData.createdAt).toLocaleDateString()}
+          </div>
+          <div className="space-x-2">
+            {blogPostData.tags.map((tag) => (
+              <span key={tag} className="rounded-md bg-gray-800 px-2 py-1">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <Render

@@ -9,7 +9,6 @@ export interface BlogPostsList {
   id: string
   slug: string
   createdAt: string
-  tags: string[]
 }
 
 export const getBlogPostsList = async () => {
@@ -27,7 +26,6 @@ export const getBlogPostsList = async () => {
       id: blogPost.id,
       slug: slugify(title),
       createdAt: blogPost.created_time,
-      tags: [],
     })
   })
 
@@ -57,6 +55,12 @@ export const getBlogPostBySlug = async (slug: string) => {
       title: data?.properties.name.title[0].plain_text,
       createdAt: data?.created_time,
       description: data.properties.description.rich_text[0].plain_text,
+      tags:
+        data.properties.tags.multi_select.length > 0
+          ? data.properties.tags.multi_select.map(
+              (tag: { name: string }) => tag.name
+            )
+          : [],
     }
   }
 
