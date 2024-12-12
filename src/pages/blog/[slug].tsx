@@ -5,8 +5,10 @@ import Head from 'next/head'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
 
+import { ShareButtons } from '@/components/blog/ShareButtons'
 import { CodeBlock } from '@/components/mdx/CodeBlock'
 import { getBlogPostBySlug, getBlogPostsList } from '@/libs/notion/blog'
+import { calculateReadingTime } from '@/utils/reading-time'
 
 interface BlogPostPageProps {
   blogPostData: {
@@ -45,18 +47,33 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
         />
       </Head>
       <div className="mb-10 space-y-4">
-        <h1 className="text-5xl font-bold">{blogPostData.title}</h1>
-        <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-          <div className="italic">
-            Published on {new Date(blogPostData.createdAt).toLocaleDateString()}
+        <h1 className="font-display text-5xl font-bold">
+          {blogPostData.title}
+        </h1>
+        <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
+          <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
+            <div className="text-gray-400">
+              {new Date(blogPostData.createdAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </div>
+            <div className="text-gray-400">
+              {calculateReadingTime(blogPostData.blocks)} min read
+            </div>
+            <div className="space-x-2">
+              {blogPostData.tags.map((tag) => (
+                <span key={tag} className="rounded-md bg-gray-800 px-2 py-1">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="space-x-2">
-            {blogPostData.tags.map((tag) => (
-              <span key={tag} className="rounded-md bg-gray-800 px-2 py-1">
-                {tag}
-              </span>
-            ))}
-          </div>
+          <ShareButtons
+            url={`https://enaut.dev${pathname}`}
+            title={blogPostData.title}
+          />
         </div>
       </div>
       <Render
