@@ -4,6 +4,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "check-types": "bash -c tsc --pretty --noEmit",
@@ -22,6 +23,7 @@
     "@notionhq/client": "2.2.15",
     "framer-motion": "11.2.10",
     "next": "14.2.10",
+    "next-sitemap": "4.2.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-syntax-highlighter": "15.5.0"
