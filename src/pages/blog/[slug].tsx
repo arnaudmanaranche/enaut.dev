@@ -24,7 +24,7 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
   const pathname = usePathname()
 
   return (
-    <>
+    <div className="mx-auto max-w-4xl pb-10">
       <Head>
         <title>{blogPostData.title}</title>
         <meta name="description" content={blogPostData.description} />
@@ -84,7 +84,7 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
           code: withContentValidation(CodeBlock),
         }}
       />
-    </>
+    </div>
   )
 }
 

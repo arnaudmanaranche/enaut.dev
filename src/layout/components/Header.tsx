@@ -6,8 +6,8 @@ export const Header = (): ReactNode => {
   const router = useRouter()
 
   return (
-    <header className="mb-28 mt-20">
-      <div className="mx-auto flex items-center justify-between">
+    <header className="mx-auto mt-20 max-w-4xl px-6 pb-28">
+      <div className="flex items-center justify-between">
         <svg
           onClick={() => {
             router.push('/')
