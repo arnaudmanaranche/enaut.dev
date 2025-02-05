@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { ReactNode } from 'react'
 
@@ -65,6 +66,15 @@ export const Header = (): ReactNode => {
             animate="visible"
           />
         </svg>
+        <nav>
+          <ul>
+            <li>
+              <Link className="text-lg" href="/crafts">
+                crafts
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   )
