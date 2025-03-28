@@ -23,7 +23,7 @@ export const getProjectsList = async () => {
     projectsList.push({
       title,
       id: project.id,
-      url: project.url,
+      url: project.properties.url.url,
       description: project.properties.description.rich_text[0].plain_text,
       tags: project.properties.tags.multi_select.map((tag: any) => tag.name),
     })

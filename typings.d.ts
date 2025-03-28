@@ -8,10 +8,6 @@ namespace NodeJS {
     // Notion
     NOTION_SECRET: string
     BLOG_DATABASE_ID: string
-    // Whoop
-    WHOOP_CLIENT_ID: string
-    WHOOP_CLIENT_SECRET: string
-    WHOOP_TOKEN_URL: string
-    WHOOP_REFRESH_TOKEN: string
+    PROJECTS_DATABASE_ID: string
   }
 }
