@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
 import type { ClassAttributes, HTMLAttributes, ReactNode } from 'react'
@@ -47,6 +48,11 @@ export const components = {
       ClassAttributes<HTMLParagraphElement> &
       HTMLAttributes<HTMLParagraphElement>
   ): ReactNode => <p className="text-lg" {...props} />,
+  a: (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLAnchorElement> &
+      HTMLAttributes<HTMLAnchorElement>
+  ): ReactNode => <a {...props} />,
 }
 
 export default function Page({
@@ -55,6 +61,9 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>): ReactNode {
   return (
     <div className="mx-auto max-w-4xl pb-10">
+      <Head>
+        <title>Crafts - {title}</title>
+      </Head>
       <div className="space-y-4 p-2">
         <div>
           <Link href="/crafts" className="text-[#81ACEC]">
