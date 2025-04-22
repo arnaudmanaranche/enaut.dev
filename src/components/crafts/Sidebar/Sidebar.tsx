@@ -1,5 +1,5 @@
 import cx from 'clsx'
-import { useState, type ReactNode } from 'react'
+import { type ReactNode, useState } from 'react'
 
 import { SidebarItemsGroup } from './Sidebar.Group'
 import { SidebarItem } from './Sidebar.Item'
