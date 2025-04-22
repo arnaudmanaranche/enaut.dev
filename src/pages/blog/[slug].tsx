@@ -63,6 +63,7 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
             }),
           }}
         />
+        <meta property="og:image" content="https://enaut.dev/api/og" />
       </Head>
       <div className="mb-10 space-y-4">
         <h1 className="font-display text-5xl font-bold leading-tight">
