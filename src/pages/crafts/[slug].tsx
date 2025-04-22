@@ -31,10 +31,28 @@ function Container({ children }: { children: ReactNode }): ReactNode {
   )
 }
 
+function ViewTheCode({ component }: { component: string }): ReactNode {
+  return (
+    <div>
+      View the code on the{' '}
+      <a
+        className="underline"
+        target="_blank"
+        rel="noreferrer"
+        href={`https://github.com/arnaudmanaranche/enaut.dev/tree/main/src/components/crafts/${component}`}
+      >
+        repository
+      </a>
+      .
+    </div>
+  )
+}
+
 export const components = {
   LongPressButton,
   Sidebar,
   SidebarItem,
+  ViewTheCode,
   SidebarItemsGroup,
   Container,
   Panels,
@@ -112,7 +130,9 @@ export const getStaticProps = (async (context) => {
 
   const { content, data } = matter(fileContent)
 
-  const mdxSource = await serialize(content)
+  const mdxSource = await serialize(content, {
+    scope: {},
+  })
 
   return { props: { source: mdxSource, title: data.title } }
 }) satisfies GetStaticProps<PageProps>
