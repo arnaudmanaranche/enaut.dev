@@ -25,7 +25,6 @@ interface BlogPostPageProps {
 const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
   const pathname = usePathname()
 
-  console.log(blogPostData.updated_at, blogPostData.created_at)
   const PAGE_URL = `https://enaut.dev/blog/${pathname}`
 
   return (
@@ -71,22 +70,30 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
         </h1>
         <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
           <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-            <div className="text-gray-400">
-              Published on{' '}
-              {formatDateWithOrdinal(new Date(blogPostData.created_at))}.
-              {isSameDay(
-                new Date(blogPostData.updated_at),
-                new Date(blogPostData.created_at)
-              )
-                ? null
-                : ` Last
+            <div className="italic text-gray-400">
+              <span>
+                {`Published on ${formatDateWithOrdinal(
+                  new Date(blogPostData.created_at)
+                )}.`}
+              </span>
+              <span>
+                {isSameDay(
+                  new Date(blogPostData.updated_at),
+                  new Date(blogPostData.created_at)
+                )
+                  ? null
+                  : ` Last
               updated on ${formatDateWithOrdinal(
                 new Date(blogPostData.updated_at)
               )}.`}
+              </span>
             </div>
             <div className="space-x-2">
               {blogPostData.tags.map((tag) => (
-                <span key={tag} className="rounded-md bg-gray-800 px-2 py-1">
+                <span
+                  key={tag}
+                  className="rounded-md bg-[#81ACEC] px-2 py-1 text-black/80"
+                >
                   {tag}
                 </span>
               ))}

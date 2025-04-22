@@ -57,7 +57,7 @@ const SOCIALS_LINKS: { name: string; href: string; icon: ReactElement }[] = [
 
 export function Footer(): ReactNode {
   return (
-    <div className="sticky bottom-0 -mt-[64px] flex min-h-[300px] items-center justify-center space-y-10 overflow-hidden bg-[#343131] pb-10 pt-[100px] md:space-y-0">
+    <div className="sticky bottom-0 -mt-[64px] flex min-h-[300px] items-center justify-center space-y-10 overflow-hidden bg-[#16181c] pb-10 pt-[100px] md:space-y-0">
       <div className="space-y-4 px-[40px]">
         <p className="text-xl">Contact</p>
         <div className="flex space-x-4">

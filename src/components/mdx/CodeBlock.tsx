@@ -2,7 +2,7 @@ import type { DropedProps } from '@9gustin/react-notion-render/dist/hoc/withCont
 import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import { useCallback, useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import { hybrid } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 import { copyTextToClipboard } from '@/utils/copyTextToClipboard'
 
@@ -84,7 +84,14 @@ export const CodeBlock = ({ plainText, language }: DropedProps) => {
           </AnimatePresence>
         </MotionConfig>
       </button>
-      <SyntaxHighlighter style={dark} language={language}>
+      <SyntaxHighlighter
+        style={hybrid}
+        language={language}
+        customStyle={{
+          padding: 20,
+          borderRadius: 4,
+        }}
+      >
         {plainText}
       </SyntaxHighlighter>
     </div>
