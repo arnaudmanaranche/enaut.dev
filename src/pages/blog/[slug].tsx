@@ -5,23 +5,28 @@ import Head from 'next/head'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
 
-import { ShareButtons } from '@/components/blog/ShareButtons'
 import { CodeBlock } from '@/components/mdx/CodeBlock'
 import { getBlogPostBySlug, getBlogPostsList } from '@/libs/notion/blog'
-import { calculateReadingTime } from '@/utils/reading-time'
+import { formatDateWithOrdinal } from '@/utils/formatDateWithOrdinal'
+import { isSameDay } from '@/utils/isSameDay'
 
 interface BlogPostPageProps {
   blogPostData: {
     blocks: NotionBlock[]
     title: string
-    createdAt: string
     description: string
     tags: string[]
+    proficiency_level: string
+    created_at: string
+    updated_at: string
   }
 }
 
 const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
   const pathname = usePathname()
+
+  console.log(blogPostData.updated_at, blogPostData.created_at)
+  const PAGE_URL = `https://enaut.dev/blog/${pathname}`
 
   return (
     <div className="mx-auto max-w-4xl pb-10">
@@ -29,38 +34,55 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
         <title>{blogPostData.title}</title>
         <meta name="description" content={blogPostData.description} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://enaut.dev/blog/${pathname}`}
-        />
+        <meta property="og:url" content={PAGE_URL} />
         <meta property="og:title" content={blogPostData.title} />
         <meta property="og:description" content={blogPostData.description} />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content={`https://enaut.dev/blog/${pathname}`}
-        />
+        <meta property="twitter:url" content={PAGE_URL} />
         <meta property="twitter:title" content={blogPostData.title} />
         <meta
           property="twitter:description"
           content={blogPostData.description}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'TechArticle',
+              headline: blogPostData.title,
+              description: blogPostData.description,
+              url: PAGE_URL,
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': PAGE_URL,
+              },
+              proficiencyLevel: blogPostData.proficiency_level,
+              dateModified: blogPostData.updated_at,
+              dateCreated: blogPostData.created_at,
+              datePublished: blogPostData.created_at,
+            }),
+          }}
+        />
       </Head>
       <div className="mb-10 space-y-4">
-        <h1 className="font-display text-5xl font-bold">
+        <h1 className="font-display text-5xl font-bold leading-tight">
           {blogPostData.title}
         </h1>
         <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
           <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
             <div className="text-gray-400">
-              {new Date(blogPostData.createdAt).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </div>
-            <div className="text-gray-400">
-              {calculateReadingTime(blogPostData.blocks)} min read
+              Published on{' '}
+              {formatDateWithOrdinal(new Date(blogPostData.created_at))}.
+              {isSameDay(
+                new Date(blogPostData.updated_at),
+                new Date(blogPostData.created_at)
+              )
+                ? null
+                : ` Last
+              updated on ${formatDateWithOrdinal(
+                new Date(blogPostData.updated_at)
+              )}.`}
             </div>
             <div className="space-x-2">
               {blogPostData.tags.map((tag) => (
@@ -70,10 +92,6 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
               ))}
             </div>
           </div>
-          <ShareButtons
-            url={`https://enaut.dev${pathname}`}
-            title={blogPostData.title}
-          />
         </div>
       </div>
       <Render

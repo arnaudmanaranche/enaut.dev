@@ -7,7 +7,7 @@ export const Layout = ({ children }: { children: ReactNode }): ReactNode => {
   return (
     <>
       <Header />
-      <main className="rounded-b-0 relative z-[1] min-h-[700px] overflow-hidden bg-[#0F0F0F] px-6 md:rounded-b-[64px]">
+      <main className="rounded-b-0 relative z-[1] min-h-[700px] overflow-hidden bg-[#1c1a39] px-6 md:rounded-b-[64px]">
         {children}
       </main>
       <Footer />

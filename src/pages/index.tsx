@@ -25,13 +25,12 @@ const HomePage = ({ posts, projects }: HomePageProps): ReactNode => {
       </Head>
       <div className="mx-auto max-w-4xl space-y-16 pb-10">
         <section className="space-y-4">
-          <h1 className="font-display text-5xl font-bold">Arnaud Manaranche</h1>
+          <h1 className="font-display text-5xl font-bold">
+            Hi, I&apos;m Arnaud!
+          </h1>
           <div className="flex flex-col gap-2 text-xl text-gray-400">
-            <span>Frontend engineer.</span>
-            <span>
-              Expert in Scalable User Interfaces, React, and TypeScript.
-            </span>
-            <span>Passionate About User-Centric Design.</span>
+            <span>Frontend Engineer / Indie Maker</span>
+            <span>Triathlete 🏊🚴🏃</span>
           </div>
         </section>
         <section className="space-y-6">

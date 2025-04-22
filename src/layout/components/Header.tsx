@@ -67,9 +67,12 @@ export const Header = (): ReactNode => {
           />
         </svg>
         <nav>
-          <ul>
+          <ul className="flex space-x-4">
             <li>
-              <Link className="text-lg" href="/crafts">
+              <Link
+                className="text-lg transition-colors hover:text-[#81ACEC]"
+                href="/crafts"
+              >
                 crafts
               </Link>
             </li>

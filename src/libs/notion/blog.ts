@@ -53,7 +53,6 @@ export const getBlogPostBySlug = async (slug: string) => {
     return {
       blocks: blogPost.results,
       title: data?.properties.name.title[0].plain_text,
-      createdAt: data?.created_time,
       description: data.properties.description.rich_text[0].plain_text,
       tags:
         data.properties.tags.multi_select.length > 0
@@ -61,6 +60,9 @@ export const getBlogPostBySlug = async (slug: string) => {
               (tag: { name: string }) => tag.name
             )
           : [],
+      proficiency_level: data.properties.proficiency_level.select?.name ?? '',
+      created_at: data.created_time,
+      updated_at: data.last_edited_time,
     }
   }
 
