@@ -47,7 +47,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.3.0",
     "plop": "4.0.1",
-    "postcss": "8.4.38",
+    "postcss": "8.5.3",
     "prettier": "2.8.8",
     "prettier-plugin-packagejson": "2.5.12",
     "prettier-plugin-tailwindcss": "0.2.8",
