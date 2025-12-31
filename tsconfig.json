@@ -20,8 +20,19 @@
       "@/layout/*": ["src/layout/*"],
       "@/libs/*": ["src/libs/*"],
       "@/utils/*": ["src/utils/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "typings.d.ts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "typings.d.ts",
+    ".next/types/**/*.ts"
+  ]
 }
