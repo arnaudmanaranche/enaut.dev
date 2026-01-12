@@ -18,13 +18,18 @@ export const getProjectsList = async () => {
   })
 
   response.results.map((project: any) => {
-    const title = project.properties.name.title[0].plain_text
+    const title = project.properties.name.title[0]?.plain_text
+    const url = project.properties.url?.url
+    const description = project.properties.description.rich_text[0]?.plain_text
+
+    // Skip projects without required fields
+    if (!title || !url || !description) return
 
     projectsList.push({
       title,
       id: project.id,
-      url: project.properties.url.url,
-      description: project.properties.description.rich_text[0].plain_text,
+      url,
+      description,
       tags: project.properties.tags.multi_select.map((tag: any) => tag.name),
     })
   })
