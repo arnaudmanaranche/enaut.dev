@@ -67,12 +67,17 @@ export const appsConfig: Record<string, AppPrivacyConfig> = {
       {
         title: 'Introduction',
         content:
-          'Our privacy policy helps you understand how Little Nook handles information. We are committed to protecting your privacy by ensuring that your data stays exclusively on your device.',
+          'Our privacy policy helps you understand how Little Nook handles information. We are committed to protecting your privacy while providing you with powerful features to manage your baby wardrobe.',
       },
       {
         title: 'Information Collection and Use',
         content:
-          'Little Nook does not collect or store any of your personal information on external servers. All data you enter, including your child’s name, gender, and expected arrival date, is stored locally on your mobile device. This information is used solely to provide personalized clothing recommendations based on birth season and to help you track your wardrobe inventory, such as bodies, pajamas, and socks.',
+          "Little Nook stores your personal data locally on your mobile device, including your child's name, gender, and expected arrival date. This information is used to provide personalized clothing recommendations based on birth season and to help you track your wardrobe inventory. Little Nook also offers an AI-powered clothing scan feature. When you use this feature, the photo is securely transmitted to our backend services (Supabase) and processed by the Google Gemini API for technical analysis (size, brand identification). The image is processed ephemerally and is not permanently stored on these servers.",
+      },
+      {
+        title: 'AI Image Scanning & Third-Party Services',
+        content:
+          'Little Nook offers an AI-powered scanning feature to help you automatically identify baby clothing details such as brands and sizes. When you use this feature, the photo is securely transmitted to our backend (Supabase) and processed by the Google Gemini API. Photos processed for AI identification are used exclusively for real-time analysis and are not stored permanently on our servers. Your photos are not used to train AI models or for any marketing purposes. Apart from this functional scan, your wardrobe inventory and personal data remain stored locally on your device.',
       },
       {
         title: 'Cookies',
@@ -85,19 +90,19 @@ export const appsConfig: Record<string, AppPrivacyConfig> = {
           'This service does not use, request, or transmit any location information from your mobile device.',
       },
       {
-        title: 'Device Information and Third Parties',
+        title: 'Third-Party Service Providers',
         content:
-          'We do not share your information with third parties. Your wardrobe data, including categories and item quantities, remains private on your device. There is currently no third-party tracking or advertising integrated into the app.',
+          'To provide the AI scanning functionality, Little Nook uses technical service providers including Supabase (backend infrastructure) and Google Cloud/Gemini (AI image analysis). These third parties process data solely for the purpose of providing the scanning feature and are contractually obligated not to use your data for their own purposes, including AI model training. No third-party tracking or advertising services are integrated into the app. Your wardrobe data, including categories and item quantities, remains private on your device.',
       },
       {
         title: 'Security',
         content:
-          'Since Little Nook stores your data locally, its security relies on the protection of your own device. We recommend using your device’s built-in security features, such as passcodes or biometrics, to safeguard your information.',
+          "Little Nook stores your data locally, so its security relies on the protection of your own device. We recommend using your device's built-in security features, such as passcodes or biometrics, to safeguard your information. When using the AI scan feature, data transmission to our service providers is encrypted using industry-standard protocols.",
       },
       {
         title: "Children's Privacy",
         content:
-          'Little Nook is designed for parents and does not knowingly collect identifiable information from children under 13. Because all data is stored locally on the parent’s device, no such information is ever transmitted to or stored on our servers.',
+          "Little Nook is designed for parents and does not knowingly collect identifiable information from children under 13. Personal data is stored locally on the parent's device. Photos used for AI scanning are processed ephemerally and are not permanently stored on external servers.",
       },
       {
         title: 'Changes to This Privacy Policy',
