@@ -5,15 +5,17 @@ import type { ReactNode } from 'react'
 import { Card } from '@/components/Card/Card'
 import type { BlogPostsList } from '@/libs/notion/blog'
 import { getBlogPostsList } from '@/libs/notion/blog'
+import type { PackagesList } from '@/libs/notion/packages';
+import { getPackagesList } from '@/libs/notion/packages'
 import type { ProjectsList } from '@/libs/notion/projects'
 import { getProjectsList } from '@/libs/notion/projects'
-
 interface HomePageProps {
-  posts: BlogPostsList[]
+    posts: BlogPostsList[]
   projects: ProjectsList[]
+  packages: PackagesList[]
 }
 
-const HomePage = ({ posts, projects }: HomePageProps): ReactNode => {
+const HomePage = ({ posts, projects, packages }: HomePageProps): ReactNode => {
   return (
     <>
       <Head>
@@ -43,6 +45,20 @@ const HomePage = ({ posts, projects }: HomePageProps): ReactNode => {
                 description={project.description}
                 href={project.url}
                 tags={project.tags}
+                isExternalLink
+              />
+            ))}
+          </div>
+        </section>
+        <section className="space-y-6">
+          <h2 className="font-display text-3xl font-bold">Packages</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {packages.map((packageItem) => (
+              <Card
+                key={packageItem.id}
+                title={packageItem.title}
+                description={packageItem.description}
+                href={packageItem.url}
                 isExternalLink
               />
             ))}
@@ -81,6 +97,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projects = await getProjectsList()
 
+  const packages = await getPackagesList()
+
   return {
     props: {
       posts: posts.sort(
@@ -88,6 +106,7 @@ export const getStaticProps: GetStaticProps = async () => {
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       ),
       projects,
+      packages,
     },
     revalidate: 60,
   }
