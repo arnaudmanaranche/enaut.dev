@@ -13,7 +13,7 @@ export default function useLongPress({
 }: UseLongPressProps) {
   const [action, setAction] = useState<ClickActionEnum>()
   const [width, setWidth] = useState(0)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
   const isLongPress = useRef(false)
 
   useEffect(() => {

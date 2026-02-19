@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { motion } from 'framer-motion'
+import { type ReactNode, useState } from 'react'
 
 type Panel = {
   title: ReactNode
@@ -13,7 +14,6 @@ export interface PanelsProps {
 
 export function Panels({ allowMultipleOpen, panels }: PanelsProps): ReactNode {
   const [openPanels, setOpenPanels] = useState<number[]>([])
-  const contentRefs = useRef<HTMLDivElement[]>([])
 
   const handleTogglePanel = (index: number) => {
     if (allowMultipleOpen) {
@@ -26,10 +26,6 @@ export function Panels({ allowMultipleOpen, panels }: PanelsProps): ReactNode {
       setOpenPanels(openPanels.includes(index) ? [] : [index])
     }
   }
-
-  useEffect(() => {
-    contentRefs.current = contentRefs.current.slice(0, panels?.length)
-  }, [panels?.length])
 
   if (!panels) return null
 
@@ -45,6 +41,8 @@ export function Panels({ allowMultipleOpen, panels }: PanelsProps): ReactNode {
         <div className="rounded-lg border-[1px] bg-white shadow-md">
           {panels.map((panel, index) => {
             const isLast = index === panels.length - 1
+            const isOpen = openPanels.includes(index)
+
             return (
               <div
                 className={clsx('rounded-t-lg  p-6', !isLast && 'border-b-2')}
@@ -56,21 +54,16 @@ export function Panels({ allowMultipleOpen, panels }: PanelsProps): ReactNode {
                 >
                   {panel.title}
                 </div>
-                <div
-                  className="overflow-hidden transition-all duration-300 ease-in-out"
-                  style={{
-                    maxHeight: openPanels.includes(index)
-                      ? `${contentRefs.current[index]?.scrollHeight}px`
-                      : '0',
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: isOpen ? 'auto' : 0,
                   }}
-                  ref={(el) => {
-                    if (el) {
-                      contentRefs.current[index] = el
-                    }
-                  }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
                 >
                   {panel.content}
-                </div>
+                </motion.div>
               </div>
             )
           })}

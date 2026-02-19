@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import type { ReactNode } from 'react'
 
-import '../src/styles/globals.css'
+import '../styles/globals.css'
 
 const manrope = Manrope({
   subsets: ['latin'],

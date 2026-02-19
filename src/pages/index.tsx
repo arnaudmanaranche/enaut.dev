@@ -5,12 +5,12 @@ import type { ReactNode } from 'react'
 import { Card } from '@/components/Card/Card'
 import type { BlogPostsList } from '@/libs/notion/blog'
 import { getBlogPostsList } from '@/libs/notion/blog'
-import type { PackagesList } from '@/libs/notion/packages';
+import type { PackagesList } from '@/libs/notion/packages'
 import { getPackagesList } from '@/libs/notion/packages'
 import type { ProjectsList } from '@/libs/notion/projects'
 import { getProjectsList } from '@/libs/notion/projects'
 interface HomePageProps {
-    posts: BlogPostsList[]
+  posts: BlogPostsList[]
   projects: ProjectsList[]
   packages: PackagesList[]
 }

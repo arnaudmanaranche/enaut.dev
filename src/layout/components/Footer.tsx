@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { ReactElement, ReactNode } from 'react'
 
-const SOCIALS_LINKS: { name: string; href: string; icon: ReactElement }[] = [
+const SOCIALS_LINKS: {
+  name: string
+  href: string
+  icon: ReactElement<SVGElement>
+}[] = [
   {
     name: 'bluesky',
     href: 'https://bsky.app/profile/enaut.bsky.social',

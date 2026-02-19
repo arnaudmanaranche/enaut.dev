@@ -20,11 +20,11 @@ export const getPackagesList = async () => {
   response.results.map((packageItem: any) => {
     const title = packageItem.properties.name.title[0]?.plain_text
     const url = packageItem.properties.url?.url
-    const description = ""
+    const description = ''
 
     // Skip projects without required fields
     if (!title || !url) return
-        packagesList.push({
+    packagesList.push({
       title,
       id: packageItem.id,
       url,
