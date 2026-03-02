@@ -10,9 +10,9 @@ export interface AppPrivacyConfig {
 }
 
 export const appsConfig: Record<string, AppPrivacyConfig> = {
-  'grumpu-putt': {
+  'grumpy-putt': {
     name: 'Grumpy Putt',
-    slug: 'grumpu-putt',
+    slug: 'grumpy-putt',
     accentColor: '#1E4234',
     email: 'hello@enaut.dev',
     sections: [
