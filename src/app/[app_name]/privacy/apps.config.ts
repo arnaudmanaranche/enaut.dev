@@ -10,36 +10,26 @@ export interface AppPrivacyConfig {
 }
 
 export const appsConfig: Record<string, AppPrivacyConfig> = {
-  'on-your-marks': {
-    name: 'On Your Marks',
-    slug: 'on-your-marks',
-    accentColor: '#81ACEC',
+  'grumpu-putt': {
+    name: 'Grumpy Putt',
+    slug: 'grumpu-putt',
+    accentColor: '#1E4234',
     email: 'hello@enaut.dev',
     sections: [
       {
         title: 'Introduction',
         content:
-          'Our privacy policy will help you understand what information we collect at {appName}, how {appName} uses it, and what choices you have.',
+          'Our privacy policy will help you understand what information we collect at Grumpy Putt, how Grumpy Putt uses it, and what choices you have.',
       },
       {
         title: 'Information Collection and Use',
         content:
-          'For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to users name, email address, gender, location, pictures. The information that we request will be retained by us and used as described in this privacy policy.',
+          'For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to users name. The information that we request will be retained by us and used as described in this privacy policy.',
       },
       {
         title: 'Cookies',
         content:
           "Cookies are files with small amount of data that is commonly used as an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device's internal memory.",
-      },
-      {
-        title: 'Location Information',
-        content:
-          "Some of the services may use location information transmitted from users' mobile phones. We only use this information within the scope necessary for the designated service.",
-      },
-      {
-        title: 'Device Information',
-        content:
-          'We want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.',
       },
       {
         title: 'Security',
