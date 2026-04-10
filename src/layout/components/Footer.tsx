@@ -4,7 +4,7 @@ import type { ReactElement, ReactNode } from 'react'
 const SOCIALS_LINKS: {
   name: string
   href: string
-  icon: ReactElement<SVGElement>
+  icon: ReactElement
 }[] = [
   {
     name: 'github',
@@ -14,8 +14,8 @@ const SOCIALS_LINKS: {
         role="img"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        height={24}
-        width={24}
+        height={20}
+        width={20}
         fill="currentColor"
       >
         <title>GitHub</title>
@@ -31,8 +31,8 @@ const SOCIALS_LINKS: {
         role="img"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        height={24}
-        width={24}
+        height={20}
+        width={20}
         fill="currentColor"
       >
         <title>X</title>
@@ -40,38 +40,60 @@ const SOCIALS_LINKS: {
       </svg>
     ),
   },
+  {
+    name: 'linkedin',
+    href: 'https://linkedin.com/in/arnaudmanaranche',
+    icon: (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        height={20}
+        width={20}
+        fill="currentColor"
+      >
+        <title>LinkedIn</title>
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
 ]
 
 export function Footer(): ReactNode {
   return (
-    <div className="sticky bottom-0 -mt-[64px] flex min-h-[300px] items-center justify-center space-y-10 overflow-hidden bg-[#16181c] pb-10 pt-[100px] md:space-y-0">
-      <div className="space-y-4 px-[40px]">
-        <p className="text-xl">Contact</p>
-        <div className="flex space-x-4">
-          <Link
-            className="transition-colors hover:text-[#81ACEC]"
-            href="mailto:hello@enaut.dev"
-          >
-            hello@enaut.dev
-          </Link>
-        </div>
-      </div>
-      <div className="space-y-4 px-[40px]">
-        <p className="text-xl">Social</p>
-        <div className="flex space-x-4">
-          {SOCIALS_LINKS.map((social) => (
+    <footer className="border-t border-border bg-surface py-12">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+          <div className="flex flex-col items-center gap-2 md:items-start">
+            <span className="text-sm text-text-muted">Contact</span>
             <Link
-              key={social.name}
-              href={social.href}
-              className="transition-colors hover:text-[#81ACEC]"
-              target="_blank"
-              rel="noreferrer"
+              className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+              href="mailto:hello@enaut.dev"
             >
-              {social.icon}
+              hello@enaut.dev
             </Link>
-          ))}
+          </div>
+          <div className="flex flex-col items-center gap-2 md:items-end">
+            <span className="text-sm text-text-muted">Social</span>
+            <div className="flex gap-4">
+              {SOCIALS_LINKS.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  className="text-text-secondary transition-colors hover:text-text-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {social.icon}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 text-center text-xs text-text-muted">
+          © {new Date().getFullYear()} Arnaud Manaranche
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

@@ -1,4 +1,4 @@
-export interface AppPrivacyConfig {
+interface AppPrivacyConfig {
   name: string
   slug: string
   accentColor: string
@@ -9,7 +9,7 @@ export interface AppPrivacyConfig {
   }[]
 }
 
-export const appsConfig: Record<string, AppPrivacyConfig> = {
+const appsConfig: Record<string, AppPrivacyConfig> = {
   'grumpy-putt': {
     name: 'Grumpy Putt',
     slug: 'grumpy-putt',

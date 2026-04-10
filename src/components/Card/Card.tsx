@@ -22,13 +22,15 @@ export function Card({
       {...(isExternalLink
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : undefined)}
-      className="group block space-y-4 rounded-lg border border-[#ffffff0b] bg-[#ffffff0b] p-6 transition-all hover:border-[#4c4d4f]"
+      className="group block rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:border-text-primary/30 hover:bg-surfaceHighlight"
     >
-      <div className="flex items-center justify-between">
-        <h3 className="font-display text-2xl font-semibold">{title}</h3>
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-lg font-semibold text-text-primary transition-colors group-hover:text-text-primary">
+          {title}
+        </h3>
         {isExternalLink ? (
           <svg
-            className="h-5 w-5 text-gray-400 transition-transform"
+            className="h-4 w-4 shrink-0 text-text-muted transition-transform group-hover:-translate-y-0.5 group-hover:text-text-primary"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -42,17 +44,19 @@ export function Card({
           </svg>
         ) : null}
       </div>
-      <p className="text-gray-400">{description}</p>
-      <div className="flex flex-wrap gap-2">
-        {tags?.map((tag) => (
-          <span
-            className="rounded-full bg-blue-400/10 px-3 py-1 text-sm text-[#81ACEC]"
-            key={tag?.toString()}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      <p className="mt-2 text-sm text-text-secondary">{description}</p>
+      {tags && tags.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              className="rounded-full bg-text-primary/10 px-2.5 py-0.5 text-xs font-medium text-text-primary"
+              key={tag?.toString()}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
     </Link>
   )
 }

@@ -2,6 +2,7 @@ import type { NotionBlock } from '@9gustin/react-notion-render'
 import { Render, withContentValidation } from '@9gustin/react-notion-render'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
 
@@ -27,8 +28,11 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
 
   const PAGE_URL = `https://enaut.dev/blog/${pathname}`
 
+  const createdDate = new Date(blogPostData.created_at)
+  const updatedDate = new Date(blogPostData.updated_at)
+
   return (
-    <div className="mx-auto max-w-4xl pb-10">
+    <div className="mx-auto max-w-3xl pb-10">
       <Head>
         <title>{blogPostData.title}</title>
         <meta name="description" content={blogPostData.description} />
@@ -65,51 +69,68 @@ const BlogPostPage = ({ blogPostData }: BlogPostPageProps): ReactNode => {
         />
         <meta property="og:image" content="https://enaut.dev/api/og" />
       </Head>
-      <div className="mb-10 space-y-4">
-        <h1 className="font-display text-5xl font-bold leading-tight">
-          {blogPostData.title}
-        </h1>
-        <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
-          <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
-            <div className="italic text-gray-400">
-              <span>
-                {`Published on ${formatDateWithOrdinal(
-                  new Date(blogPostData.created_at)
-                )}.`}
-              </span>
-              <span>
-                {isSameDay(
-                  new Date(blogPostData.updated_at),
-                  new Date(blogPostData.created_at)
-                )
-                  ? null
-                  : ` Last
-              updated on ${formatDateWithOrdinal(
-                new Date(blogPostData.updated_at)
-              )}.`}
-              </span>
-            </div>
-            <div className="space-x-2">
+
+      <Link
+        href="/"
+        className="mb-8 inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-text-primary"
+      >
+        <svg
+          className="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Back
+      </Link>
+
+      <article>
+        <header className="mb-10 space-y-4">
+          <h1 className="text-3xl font-bold leading-tight text-text-primary">
+            {blogPostData.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-text-muted">
+            <time dateTime={createdDate.toISOString()}>
+              {formatDateWithOrdinal(createdDate)}
+            </time>
+            {!isSameDay(updatedDate, createdDate) && (
+              <>
+                <span>·</span>
+                <span>Updated {formatDateWithOrdinal(updatedDate)}</span>
+              </>
+            )}
+          </div>
+          {blogPostData.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2">
               {blogPostData.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-md bg-[#81ACEC] px-2 py-1 text-black/80"
+                  className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-text-secondary"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-          </div>
+          )}
+        </header>
+
+        <div className="prose prose-lg prose-invert max-w-none">
+          <Render
+            blocks={blogPostData.blocks}
+            useStyles
+            classNames
+            blockComponentsMapper={{
+              code: withContentValidation(CodeBlock),
+            }}
+          />
         </div>
-      </div>
-      <Render
-        blocks={blogPostData.blocks}
-        useStyles
-        classNames
-        blockComponentsMapper={{
-          code: withContentValidation(CodeBlock),
-        }}
-      />
+      </article>
     </div>
   )
 }

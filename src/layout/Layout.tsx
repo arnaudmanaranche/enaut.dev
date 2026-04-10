@@ -5,12 +5,10 @@ import { Header } from './components/Header'
 
 export const Layout = ({ children }: { children: ReactNode }): ReactNode => {
   return (
-    <>
+    <div className="min-h-screen bg-background text-text-primary">
       <Header />
-      <main className="rounded-b-0 relative z-[1] min-h-[700px] overflow-hidden bg-[#282c35] px-6 md:rounded-b-[64px]">
-        {children}
-      </main>
+      <main className="px-6 pb-10">{children}</main>
       <Footer />
-    </>
+    </div>
   )
 }
