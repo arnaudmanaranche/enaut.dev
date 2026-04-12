@@ -18,13 +18,10 @@ export function HoverCard({
   revenue = 0,
   newCustomers = 0,
   activeSubs = 0,
-  chartData = [],
+  chartData,
   period = 'Last 28 days',
 }: HoverCardProps): ReactNode {
-  const displayData =
-    chartData.length > 0
-      ? chartData
-      : [30, 45, 38, 52, 48, 65, 72, 78, 85, 92, 88, 95]
+  const displayData = chartData && chartData.length > 0 ? chartData : []
   const maxValue = Math.max(...displayData, 1)
 
   return (
@@ -57,7 +54,7 @@ export function HoverCard({
             <div className="mt-3 flex h-16 items-end gap-1">
               {displayData.map((value, i) => (
                 <div
-                  key={i}
+                  key={`${value}-${i}`}
                   className="animate-bar flex-1 rounded-t bg-text-primary/50 group-hover:bg-[#F25A5A]"
                   style={{
                     height: `${(value / maxValue) * 100}%`,

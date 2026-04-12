@@ -16,6 +16,13 @@ export const Header = (): ReactNode => {
             onClick={() => {
               router.push('/')
             }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                router.push('/')
+              }
+            }}
+            role="button"
+            tabIndex={0}
             className="cursor-pointer"
             width="48"
             height="48"

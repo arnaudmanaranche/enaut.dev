@@ -77,8 +77,8 @@ export default async function PrivacyPage({
           Privacy Policy
         </h2>
 
-        {sections.map((section, index) => (
-          <Section key={index} title={section.title}>
+        {sections.map((section) => (
+          <Section key={section.title} title={section.title}>
             {section.content.replace(/{appName}/g, name)}
           </Section>
         ))}

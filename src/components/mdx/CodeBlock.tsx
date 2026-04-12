@@ -5,6 +5,7 @@ import {
   LazyMotion,
   m as motion,
   MotionConfig,
+  useReducedMotion,
 } from 'framer-motion'
 import { useCallback, useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
@@ -12,12 +13,19 @@ import { hybrid } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 import { copyTextToClipboard } from '@/utils/copyTextToClipboard'
 
-const variants = {
+const defaultVariants = {
   visible: { opacity: 1, scale: 1 },
   hidden: { opacity: 0, scale: 0.5 },
 }
 
+const reducedMotionVariants = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+}
+
 export const CodeBlock = ({ plainText, language }: DropedProps) => {
+  const shouldReduceMotion = useReducedMotion()
+  const variants = shouldReduceMotion ? reducedMotionVariants : defaultVariants
   const [copying, setCopying] = useState(0)
 
   const onCopy = useCallback(() => {
